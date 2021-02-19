@@ -27,6 +27,13 @@ class ActivityDetails extends Component {
         this.getActivityDetails()
     }
 
+    deleteActivity = () => {
+        axios.delete(`http://localhost:5000/api/activities/${this.props.match.params.activityId}`, { withCredentials: true })
+        .then(() => {
+            this.props.history.push('/activities');
+        }, (error) => console.log(error))
+    }
+
     render() {
         return (
             <div>
@@ -34,6 +41,7 @@ class ActivityDetails extends Component {
                 <p>{this.state.description}</p>
                 <p>{this.state.category}</p>
                 <p>{this.state.status}</p>
+                <button onClick={this.deleteActivity}>Delete</button>
             </div>
         )
     }
