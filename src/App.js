@@ -5,6 +5,7 @@ import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
 import Navbar from './components/navbars/Navbar';
 import Sidebar from './components/navbars/Sidebar';
+import ActivitiesList from './components/activities/ActivitiesList';
 
 class App extends Component {
   state = {
@@ -26,6 +27,8 @@ class App extends Component {
           <Route exact path="/signup" render={(props) => <Signup {...props} getUser={this.getTheUser} />} />
 
           <Route exact path="/login" render={(props) => <Login {...props} getUser={this.getTheUser} />} />
+
+          <Route exact path="/activities" render={() => <ActivitiesList  getUser={this.getTheUser} />} />
         </Switch>
       </div>
     );
