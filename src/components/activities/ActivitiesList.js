@@ -33,6 +33,8 @@ class ActivitiesList extends Component {
         return (
             <div>
                 {activities}
+                <hr></hr>
+                <Link to={"/activities/create"}>Create activity</Link>
             </div>
         )
     }
