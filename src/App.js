@@ -6,6 +6,7 @@ import Login from './components/auth/Login';
 import Navbar from './components/navbars/Navbar';
 import Sidebar from './components/navbars/Sidebar';
 import ActivitiesList from './components/activities/ActivitiesList';
+import ActivityDetails from './components/activities/ActivityDetails'
 
 class App extends Component {
   state = {
@@ -29,6 +30,8 @@ class App extends Component {
           <Route exact path="/login" render={(props) => <Login {...props} getUser={this.getTheUser} />} />
 
           <Route exact path="/activities" render={() => <ActivitiesList  getUser={this.getTheUser} />} />
+
+          <Route exact path="/activities/:activityId" render={(props) => <ActivityDetails  {...props} getUser={this.getTheUser} />} />
         </Switch>
       </div>
     );
