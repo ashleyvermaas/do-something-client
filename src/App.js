@@ -3,6 +3,8 @@ import './App.css';
 import { Switch, Route } from 'react-router-dom';
 import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
+import Navbar from './components/navbars/Navbar';
+import Sidebar from './components/navbars/Sidebar';
 
 class App extends Component {
   state = {
@@ -18,7 +20,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
+        {this.state.loggedInUser ?  <Sidebar /> : <Navbar />}
+        
         <Switch>
           <Route exact path="/signup" render={() => <Signup getUser={this.getTheUser} />} />
 
