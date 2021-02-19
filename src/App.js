@@ -20,12 +20,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.loggedInUser ?  <Sidebar /> : <Navbar />}
+        {this.state.loggedInUser ?  <Sidebar user={this.state.loggedInUser} getUser={this.getTheUser} /> : <Navbar />}
         
         <Switch>
-          <Route exact path="/signup" render={() => <Signup getUser={this.getTheUser} />} />
+          <Route exact path="/signup" render={(props) => <Signup {...props} getUser={this.getTheUser} />} />
 
-          <Route exact path="/login" render={() => <Login getUser={this.getTheUser} />} />
+          <Route exact path="/login" render={(props) => <Login {...props} getUser={this.getTheUser} />} />
         </Switch>
       </div>
     );
