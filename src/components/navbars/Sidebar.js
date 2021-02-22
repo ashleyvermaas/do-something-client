@@ -21,6 +21,7 @@ class Sidebar extends Component {
                 <p><Link to={"/"}>Home</Link></p>
                 <p><Link to={"/dashboard"}>Dashboard</Link></p>
                 <p><Link to={"/activities"}>All activities</Link></p>
+                <p><Link to={"/my-profile"}>Profile</Link></p>
                 <Link to={"/"}><button onClick={() => this.logoutUser()}>Log out</button></Link>
             </div>
         )

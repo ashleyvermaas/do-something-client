@@ -43,6 +43,9 @@ class ActivityDetails extends Component {
                 <p>{this.state.description}</p>
                 <p>{this.state.category}</p>
                 <p>{this.state.status}</p>
+
+                <p><Link to={{pathname: `/activities/${this.props.match.params.activityId}/edit`,
+                state: { title: this.state.title } }}>Edit activity</Link></p>
                 <button onClick={this.deleteActivity}>Delete</button>
             </div>
         )
