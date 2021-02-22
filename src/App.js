@@ -37,7 +37,7 @@ class App extends Component {
 
           <Route exact path="/dashboard" render={() => <Dashboard getUser={this.getTheUser} />} />
 
-          <Route exact path="/activities" render={() => <ActivitiesList getUser={this.getTheUser} />} />
+          <Route exact path="/activities" render={() => <ActivitiesList user={this.state.loggedInUser} getUser={this.getTheUser} />} />
 
           <Route exact path="/activities/create" render={(props) => <AddActivity  {...props} getUser={this.getTheUser} />} />
 
