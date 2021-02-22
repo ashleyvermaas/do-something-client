@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Sidebar from '../navbars/Sidebar';
 
 class ActivitiesList extends Component {
     state = {
@@ -32,6 +33,7 @@ class ActivitiesList extends Component {
         })
         return (
             <div>
+                <Sidebar />
                 {activities}
                 <hr></hr>
                 <Link to={"/activities/create"}>Create activity</Link>

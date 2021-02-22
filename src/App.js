@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Switch, Route, Redirect } from 'react-router-dom';
 
 import Homepage from './components/homepage/Homepage';
 import Signup from './components/auth/Signup';
@@ -11,6 +11,7 @@ import Dashboard from './components/dashboard/Dashboard'
 import ActivitiesList from './components/activities/ActivitiesList';
 import ActivityDetails from './components/activities/ActivityDetails';
 import AddActivity from './components/activities/AddActivity';
+import ProtectedRoute from './components/auth/ProtectedRoute';
 
 class App extends Component {
   state = {
@@ -26,8 +27,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.loggedInUser ? <Sidebar user={this.state.loggedInUser} getUser={this.getTheUser} /> : <Navbar />}
-
         <Switch>
           <Route exact path="/" render={() => <Homepage />} />
 
@@ -35,13 +34,13 @@ class App extends Component {
 
           <Route exact path="/login" render={(props) => <Login {...props} getUser={this.getTheUser} />} />
 
-          <Route exact path="/dashboard" render={() => <Dashboard getUser={this.getTheUser} />} />
+          <ProtectedRoute user={this.state.loggedInUser} exact path="/dashboard"  component={Dashboard} />
 
-          <Route exact path="/activities" render={() => <ActivitiesList user={this.state.loggedInUser} getUser={this.getTheUser} />} />
+          <ProtectedRoute user={this.state.loggedInUser} exact path="/activities" component={ActivitiesList} />
 
-          <Route exact path="/activities/create" render={(props) => <AddActivity  {...props} getUser={this.getTheUser} />} />
+          <ProtectedRoute user={this.state.loggedInUser} exact path="/activities/create"  component={AddActivity} />
 
-          <Route exact path="/activities/:activityId" render={(props) => <ActivityDetails  {...props} getUser={this.getTheUser} />} />
+          <ProtectedRoute user={this.state.loggedInUser} exact path="/activities/:activityId" component={ActivityDetails} />
         </Switch>
       </div>
     );
@@ -49,3 +48,6 @@ class App extends Component {
 }
 
 export default App;
+// render={() => <ActivitiesList getUser={this.getTheUser} />}
+
+//render={(props) => <AddActivity  {...props} getUser={this.getTheUser} />}

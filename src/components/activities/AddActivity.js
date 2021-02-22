@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Sidebar from '../navbars/Sidebar';
 
 class AddActivity extends Component {
     state = {
@@ -36,6 +37,7 @@ class AddActivity extends Component {
     render() {
         return (
             <div>
+                <Sidebar />
                 <form onSubmit={this.handleFormSubmit}>
                     <label>Title:</label>
                     <input name="title" value={this.state.title} type="text" onChange={this.handleChange} />

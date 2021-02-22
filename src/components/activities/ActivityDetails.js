@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Sidebar from '../navbars/Sidebar';
 
 class ActivityDetails extends Component {
     constructor(props) {
@@ -37,6 +38,7 @@ class ActivityDetails extends Component {
     render() {
         return (
             <div>
+                <Sidebar />
                 <h4>{this.state.title}</h4>
                 <p>{this.state.description}</p>
                 <p>{this.state.category}</p>

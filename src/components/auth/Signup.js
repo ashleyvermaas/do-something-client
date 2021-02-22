@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AuthService from '../services/auth-service';
 import { Link } from 'react-router-dom';
+import Navbar from '../navbars/Navbar';
 
 class Signup extends Component {
     state = {
@@ -25,7 +26,7 @@ class Signup extends Component {
                     password: ""
                 });
                 this.props.getUser(response);
-                this.props.history.push("/");
+                this.props.history.push("/dashboard");
             })
             .catch((error) => console.log(error))
     }
@@ -40,6 +41,7 @@ class Signup extends Component {
     render() {
         return (
             <div>
+                <Navbar /> 
                 <form onSubmit={this.handleFormSubmit}>
                     <label>Username:</label>
                     <input type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
