@@ -28,7 +28,7 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route exact path="/" render={() => <Homepage />} />
+          <Route exact path="/" render={() => <Homepage user={this.state.loggedInUser} />} />
 
           <Route exact path="/signup" render={(props) => <Signup {...props} getUser={this.getTheUser} />} />
 

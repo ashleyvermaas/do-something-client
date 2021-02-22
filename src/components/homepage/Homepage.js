@@ -1,10 +1,10 @@
 import React from 'react';
 import Navbar from '../navbars/Navbar';
 
-function Homepage() {
+function Homepage(props) {
     return (
         <div>
-        <Navbar />
+        <Navbar user={props.user}/>
             <h1>Homepage</h1>
         </div>
     )
