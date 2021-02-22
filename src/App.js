@@ -34,13 +34,13 @@ class App extends Component {
 
           <Route exact path="/login" render={(props) => <Login {...props} getUser={this.getTheUser} />} />
 
-          <ProtectedRoute user={this.state.loggedInUser} exact path="/dashboard"  component={Dashboard} />
+          <ProtectedRoute user={this.state.loggedInUser} exact path="/dashboard"  component={Dashboard} getUser={this.getTheUser}/>
 
-          <ProtectedRoute user={this.state.loggedInUser} exact path="/activities" component={ActivitiesList} />
+          <ProtectedRoute user={this.state.loggedInUser} exact path="/activities" component={ActivitiesList} getUser={this.getTheUser}/>
 
-          <ProtectedRoute user={this.state.loggedInUser} exact path="/activities/create"  component={AddActivity} />
+          <ProtectedRoute user={this.state.loggedInUser} exact path="/activities/create"  component={AddActivity} getUser={this.getTheUser}/>
 
-          <ProtectedRoute user={this.state.loggedInUser} exact path="/activities/:activityId" component={ActivityDetails} />
+          <ProtectedRoute user={this.state.loggedInUser} exact path="/activities/:activityId" component={ActivityDetails} getUser={this.getTheUser}/>
         </Switch>
       </div>
     );
@@ -48,6 +48,3 @@ class App extends Component {
 }
 
 export default App;
-// render={() => <ActivitiesList getUser={this.getTheUser} />}
-
-//render={(props) => <AddActivity  {...props} getUser={this.getTheUser} />}
