@@ -33,7 +33,7 @@ class ActivitiesList extends Component {
         })
         return (
             <div>
-                <Sidebar />
+                <Sidebar getUser={this.props.getUser} />
                 {activities}
                 <hr></hr>
                 <Link to={"/activities/create"}>Create activity</Link>
