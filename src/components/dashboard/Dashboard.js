@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import Sidebar from '../navbars/Sidebar';
+import { Link } from 'react-router-dom';
 
 class Dashboard extends Component {
     constructor(props) {
@@ -29,7 +30,7 @@ class Dashboard extends Component {
         const randomActivity = this.state.listOfActivities[Math.floor(Math.random() * this.state.listOfActivities.length)];
         console.log(randomActivity)
         this.setState({
-            randomActivity: randomActivity.title
+            randomActivity: randomActivity
         })
     }
 
@@ -42,7 +43,7 @@ class Dashboard extends Component {
                 <hr></hr>
                 <section>
                     <h2>Random activity</h2>
-                    doSomething .... <p>{this.state.randomActivity}</p>
+                    <Link to={`/activities/${this.state.randomActivity._id}`}><p>{this.state.randomActivity.title}</p></Link>
                     <button onClick={this.getRandomActivity}>Get Random Activity</button>
                 </section>
                 <hr></hr>
@@ -51,6 +52,7 @@ class Dashboard extends Component {
                         <h2>Events</h2>
                     </div>
                     <div>
+                    <h2>Doing</h2>
                         <h2>Completed</h2>
                     </div>
                 </section>
