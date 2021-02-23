@@ -18,6 +18,7 @@ import ActivityDetails from './components/activities/ActivityDetails';
 import EditActivity from './components/activities/EditActivity.js';
 import AddActivity from './components/activities/AddActivity';
 
+
 import ProtectedRoute from './components/auth/ProtectedRoute';
 
 class App extends Component {

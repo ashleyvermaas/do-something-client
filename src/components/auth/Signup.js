@@ -42,6 +42,7 @@ class Signup extends Component {
         return (
             <div>
                 <Navbar /> 
+                <h2>Create an account</h2>
                 <form onSubmit={this.handleFormSubmit}>
                     <label>Username:</label>
                     <input type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
