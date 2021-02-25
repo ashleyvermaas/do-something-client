@@ -46,7 +46,7 @@ class ActivityDetails extends Component {
             <div>
                 {this.state.showForm ?
                     <div>
-                        <EditActivity {...this.props} theActivity={this.state} />
+                        <EditActivity {...this.props} theActivity={this.state} toggleForm={this.toggleForm} />
                         <button onClick={this.toggleForm}>Go back</button>
                     </div>
                     :
