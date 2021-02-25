@@ -41,7 +41,7 @@ class ActivitiesList extends Component {
             <div>
                 {this.state.showForm ? 
                 <div>
-                    <AddActivity {...this.props} toggleForm={this.toggleForm} />
+                    <AddActivity toggleForm={this.toggleForm} />
                     <button onClick={this.toggleForm}>Go back</button>
                 </div> 
                 : 

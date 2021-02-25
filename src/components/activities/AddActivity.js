@@ -12,13 +12,13 @@ class AddActivity extends Component {
 
     handleFormSubmit = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:5000/api/activities/create", {
+        axios.post("http://localhost:5000/api/activities", {
             title: this.state.title,
             description: this.state.description,
             category: this.state.category
         }, { withCredentials: true })
             .then((res) => {
-                this.props.history.push('/activities')
+                this.props.toggleForm()
                 this.setState({
                     title: "",
                     description: "",
