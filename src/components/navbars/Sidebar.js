@@ -11,7 +11,7 @@ class Sidebar extends Component {
     logoutUser = () => {
         this.service.logout()
             .then(() => {
-                this.props.getUser(null)
+                this.props.setUser(null)
             })
     }
     render() {

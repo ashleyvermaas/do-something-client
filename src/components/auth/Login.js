@@ -22,7 +22,7 @@ class Login extends Component {
                     email: "",
                     password: ""
                 });
-                this.props.getUser(response);
+                this.props.setUser(response);
                 this.props.history.push('/dashboard')
             })
             .catch((error) => console.log(error))

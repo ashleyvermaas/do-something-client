@@ -26,7 +26,7 @@ class App extends Component {
     loggedInUser: null
   }
 
-  getTheUser = (userObj) => {
+  setTheUser = (userObj) => {
     this.setState({
       loggedInUser: userObj
     })
@@ -38,21 +38,21 @@ class App extends Component {
         <Switch>
           <Route exact path="/" render={() => <Homepage user={this.state.loggedInUser} />} />
 
-          <Route exact path="/signup" render={(props) => <Signup {...props} getUser={this.getTheUser} />} />
+          <Route exact path="/signup" render={(props) => <Signup {...props} setUser={this.setTheUser} />} />
 
-          <Route exact path="/login" render={(props) => <Login {...props} getUser={this.getTheUser} />} />
+          <Route exact path="/login" render={(props) => <Login {...props} setUser={this.setTheUser} />} />
 
-          <ProtectedRoute user={this.state.loggedInUser} exact path="/dashboard" component={Dashboard} getUser={this.getTheUser}/>
+          <ProtectedRoute user={this.state.loggedInUser} exact path="/dashboard" component={Dashboard} setUser={this.setTheUser}/>
 
-          <ProtectedRoute user={this.state.loggedInUser} exact path="/my-profile" component={Profile} getUser={this.getTheUser}/>
+          <ProtectedRoute user={this.state.loggedInUser} exact path="/my-profile" component={Profile} setUser={this.setTheUser}/>
 
-          <ProtectedRoute user={this.state.loggedInUser} exact path="/my-profile/edit" component={EditProfile} getUser={this.getTheUser}/>
+          <ProtectedRoute user={this.state.loggedInUser} exact path="/my-profile/edit" component={EditProfile} setUser={this.setTheUser}/>
 
-          <ProtectedRoute user={this.state.loggedInUser} exact path="/activities" component={ActivitiesList} getUser={this.getTheUser}/>
+          <ProtectedRoute user={this.state.loggedInUser} exact path="/activities" component={ActivitiesList} setUser={this.setTheUser}/>
 
-          <ProtectedRoute user={this.state.loggedInUser} exact path="/activities/create" component={AddActivity} getUser={this.getTheUser}/>
+          <ProtectedRoute user={this.state.loggedInUser} exact path="/activities/create" component={AddActivity} setUser={this.setTheUser}/>
 
-          <ProtectedRoute user={this.state.loggedInUser} exact path="/activities/:activityId" component={ActivityDetails} getUser={this.getTheUser}/>
+          <ProtectedRoute user={this.state.loggedInUser} exact path="/activities/:activityId" component={ActivityDetails} setUser={this.setTheUser}/>
         </Switch>
       </div>
     );

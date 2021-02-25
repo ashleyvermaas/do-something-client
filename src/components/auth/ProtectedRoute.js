@@ -2,13 +2,13 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import Sidebar from '../navbars/Sidebar';
 
-const ProtectedRoute = ({ component: Component, user, getUser, ...rest }) => {
+const ProtectedRoute = ({ component: Component, user, setUser, ...rest }) => {
     return (
         <Route {...rest}
             render={props => {
                 if (user) {
                     return <div>
-                    <Sidebar getUser={getUser} />
+                    <Sidebar setUser={setUser} />
                     <Component {...props} user={user} {...rest} />
                     </div>
                 } else {
