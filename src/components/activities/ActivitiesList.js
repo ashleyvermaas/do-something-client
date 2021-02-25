@@ -41,7 +41,7 @@ class ActivitiesList extends Component {
             <div>
                 {this.state.showForm ? 
                 <div>
-                    <AddActivity toggleForm={this.toggleForm} />
+                    <AddActivity toggleForm={this.toggleForm} getAllActivities={this.getAllActivities}/>
                 </div> 
                 : 
                 <div>

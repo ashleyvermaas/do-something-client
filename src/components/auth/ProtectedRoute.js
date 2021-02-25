@@ -7,10 +7,10 @@ const ProtectedRoute = ({ component: Component, user, setUser, ...rest }) => {
         <Route {...rest}
             render={props => {
                 if (user) {
-                    return <div>
+                    return (<div>
                     <Sidebar setUser={setUser} />
                     <Component {...props} user={user} {...rest} />
-                    </div>
+                    </div>)
                 } else {
                     return <Redirect to={{ pathname: '/login', state: { from: props.location } }} />
                 }

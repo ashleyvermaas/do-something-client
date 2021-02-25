@@ -18,6 +18,7 @@ class AddActivity extends Component {
             category: this.state.category
         }, { withCredentials: true })
             .then((res) => {
+                this.props.getAllActivities()
                 this.props.toggleForm()
                 this.setState({
                     title: "",
