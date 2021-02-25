@@ -39,7 +39,6 @@ class Profile extends Component {
                 {this.state.showForm ?
                     <div>
                         <EditProfile {...this.props} toggleForm={this.toggleForm} />
-                        <button onClick={this.toggleForm}>Go back</button>
                     </div>
                     :
                     <div>
@@ -47,10 +46,14 @@ class Profile extends Component {
                         <img src={this.props.user.imageUrl} />
                         <p>Username: {this.props.user.username}</p>
                         <p>Email: {this.props.user.email}</p>
-                        <button onClick={this.toggleForm}>Edit Profile</button>
                         <button onClick={this.deleteProfile}>Delete profile</button>
                     </div>
                 }
+
+                <button onClick={this.toggleForm}>
+                    {this.state.showForm ? "Go back" : "Edit Profile"}
+                </button>
+                
             </div>
         )
     }

@@ -47,7 +47,6 @@ class ActivityDetails extends Component {
                 {this.state.showForm ?
                     <div>
                         <EditActivity {...this.props} theActivity={this.state} toggleForm={this.toggleForm} />
-                        <button onClick={this.toggleForm}>Go back</button>
                     </div>
                     :
                     <div>
@@ -55,9 +54,16 @@ class ActivityDetails extends Component {
                         <p>{this.state.description}</p>
                         <p>{this.state.category}</p>
                         <p>{this.state.status}</p>
-                        <button onClick={this.toggleForm}>Edit Activity</button>
                         <button onClick={this.deleteActivity}>Delete</button>
+                        <Link to={'/activities'}>
+                            <button>Go back</button>
+                        </Link>
                     </div>}
+
+                <button onClick={this.toggleForm}>
+                    {this.state.showForm ? "Go back" : "Edit Activity"}
+                </button>
+
             </div>
         )
     }
