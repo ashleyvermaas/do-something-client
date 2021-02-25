@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Sidebar from '../navbars/Sidebar';
+import AddActivity from './AddActivity';
 
 class ActivitiesList extends Component {
     state = {
-        listOfActivities: []
+        listOfActivities: [],
+        showForm: false
     }
 
     getAllActivities = () => {
@@ -21,6 +23,10 @@ class ActivitiesList extends Component {
         this.getAllActivities()
     }
 
+    toggleForm = () => {
+        this.state.showForm ? this.setState({ showForm: false }) : this.setState({ showForm: true })
+    }
+
     render() {
         const activities = this.state.listOfActivities.map(activity => {
             return (
@@ -33,9 +39,17 @@ class ActivitiesList extends Component {
         })
         return (
             <div>
-                {activities}
-                <hr></hr>
-                <Link to={"/activities/create"}>Create activity</Link>
+                {this.state.showForm ? 
+                <div>
+                    <AddActivity {...this.props} toggleForm={this.toggleForm} />
+                    <button onClick={this.toggleForm}>Go back</button>
+                </div> 
+                : 
+                <div>
+                    {activities}
+                    <button onClick={this.toggleForm}>Create activity</button>
+                </div>}
+
             </div>
         )
     }

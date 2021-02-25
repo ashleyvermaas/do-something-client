@@ -36,10 +36,13 @@ class Profile extends Component {
     render() {
         return (
             <div>
-                {this.state.showForm ? <div>
-                    <EditProfile {...this.props} toggleForm={this.toggleForm}/>
-                    <button onClick={this.toggleForm}>Go back</button>
-                    </div> : <div>
+                {this.state.showForm ?
+                    <div>
+                        <EditProfile {...this.props} toggleForm={this.toggleForm} />
+                        <button onClick={this.toggleForm}>Go back</button>
+                    </div>
+                    :
+                    <div>
                         <h1>Profile</h1>
                         <img src={this.props.user.imageUrl} />
                         <p>Username: {this.props.user.username}</p>
