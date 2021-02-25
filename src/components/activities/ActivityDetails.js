@@ -38,7 +38,6 @@ class ActivityDetails extends Component {
     render() {
         return (
             <div>
-                <Sidebar getUser={this.props.getUser} />
                 <h4>{this.state.title}</h4>
                 <p>{this.state.description}</p>
                 <p>{this.state.category}</p>

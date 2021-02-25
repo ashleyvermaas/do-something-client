@@ -28,7 +28,6 @@ class Profile extends Component {
     render() {
         return (
             <div>
-                <Sidebar getUser={this.props.getUser} />
                 <h1>Profile</h1>
                 <img src={this.props.user.imageUrl} />
                 <p>Username: {this.props.user.username}</p>

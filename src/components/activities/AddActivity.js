@@ -37,7 +37,6 @@ class AddActivity extends Component {
     render() {
         return (
             <div>
-                <Sidebar getUser={this.props.getUser} />
                 <form onSubmit={this.handleFormSubmit}>
                     <label>Title:</label>
                     <input name="title" value={this.state.title} type="text" onChange={this.handleChange} />

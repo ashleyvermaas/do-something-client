@@ -37,7 +37,6 @@ class Dashboard extends Component {
     render() {
         return (
             <div>
-                <Sidebar getUser={this.props.getUser} />
                 <hr></hr>
                 <h1>Dashboard</h1>
                 <hr></hr>

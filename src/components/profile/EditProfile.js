@@ -18,6 +18,7 @@ class EditProfile extends Component {
 
         axios.put(`http://localhost:5000/api/my-profile/edit`, { username, email }, {withCredentials:true})
         .then( () => {
+            
             this.props.history.push('/my-profile');    
         }, error => {
             console.log(error)
@@ -34,7 +35,6 @@ class EditProfile extends Component {
     render() {
         return (
             <div>
-            <Sidebar getUser={this.props.getUser} />
                 <h1>Edit profile</h1>
                 <form onSubmit={this.handleFormSubmit}>
                     <label>Username:</label>
