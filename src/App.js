@@ -51,11 +51,7 @@ class App extends Component {
 
           <ProtectedRoute user={this.state.loggedInUser} exact path="/my-profile" component={Profile} setUser={this.setTheUser}/>
 
-          <ProtectedRoute user={this.state.loggedInUser} exact path="/my-profile/edit" component={EditProfile} setUser={this.setTheUser}/>
-
           <ProtectedRoute user={this.state.loggedInUser} exact path="/activities" component={ActivitiesList} setUser={this.setTheUser}/>
-
-          <ProtectedRoute user={this.state.loggedInUser} exact path="/activities/create" component={AddActivity} setUser={this.setTheUser}/>
 
           <ProtectedRoute user={this.state.loggedInUser} exact path="/activities/:activityId" component={ActivityDetails} setUser={this.setTheUser}/>
         </Switch>
