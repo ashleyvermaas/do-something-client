@@ -16,10 +16,9 @@ class EditProfile extends Component {
         const username = this.state.username;
         const email = this.state.email;
 
-        axios.put(`http://localhost:5000/api/my-profile/edit`, { username, email }, {withCredentials:true})
+        axios.put(`http://localhost:5000/api/my-profile`, { username, email }, {withCredentials:true})
         .then( () => {
-            
-            this.props.history.push('/my-profile');    
+            this.props.toggleForm()
         }, error => {
             console.log(error)
         })

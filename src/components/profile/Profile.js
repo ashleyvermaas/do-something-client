@@ -37,7 +37,7 @@ class Profile extends Component {
         return (
             <div>
                 {this.state.showForm ? <div>
-                    <EditProfile {...this.props} />
+                    <EditProfile {...this.props} toggleForm={this.toggleForm}/>
                     <button onClick={this.toggleForm}>Go back</button>
                     </div> : <div>
                         <h1>Profile</h1>
