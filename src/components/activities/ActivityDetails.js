@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Sidebar from '../navbars/Sidebar';
+import EditActivity from './EditActivity';
 
 class ActivityDetails extends Component {
     constructor(props) {
@@ -12,7 +13,8 @@ class ActivityDetails extends Component {
             category: "",
             status: "",
             owner: "",
-            _id: ""
+            _id: "",
+            showForm: false
         }
     }
 
@@ -30,22 +32,32 @@ class ActivityDetails extends Component {
 
     deleteActivity = () => {
         axios.delete(`http://localhost:5000/api/activities/${this.props.match.params.activityId}`, { withCredentials: true })
-        .then(() => {
-            this.props.history.push('/activities');
-        }, (error) => console.log(error))
+            .then(() => {
+                this.props.history.push('/activities');
+            }, (error) => console.log(error))
+    }
+
+    toggleForm = () => {
+        this.state.showForm ? this.setState({ showForm: false }) : this.setState({ showForm: true })
     }
 
     render() {
         return (
             <div>
-                <h4>{this.state.title}</h4>
-                <p>{this.state.description}</p>
-                <p>{this.state.category}</p>
-                <p>{this.state.status}</p>
-
-                <p><Link to={{pathname: `/activities/${this.props.match.params.activityId}/edit`,
-                state: { title: this.state.title } }}>Edit activity</Link></p>
-                <button onClick={this.deleteActivity}>Delete</button>
+                {this.state.showForm ?
+                    <div>
+                        <EditActivity {...this.props} theActivity={this.state} />
+                        <button onClick={this.toggleForm}>Go back</button>
+                    </div>
+                    :
+                    <div>
+                        <h4>{this.state.title}</h4>
+                        <p>{this.state.description}</p>
+                        <p>{this.state.category}</p>
+                        <p>{this.state.status}</p>
+                        <button onClick={this.toggleForm}>Edit Activity</button>
+                        <button onClick={this.deleteActivity}>Delete</button>
+                    </div>}
             </div>
         )
     }
