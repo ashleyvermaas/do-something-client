@@ -32,6 +32,11 @@ class App extends Component {
     })
   }
 
+  updateUserDetails(username, email){
+    // update state.loggedInUser.username
+    // update state.loggedInUser.email
+  }
+
   render() {
     return (
       <div className="App">
