@@ -14,7 +14,7 @@ class EditActivity extends Component {
 
     handleFormSubmit = (e) => {
         e.preventDefault();
-        axios.put(`http://localhost:5000/api/activities/${this.props.match.params.activityId}`, {
+        axios.put(`${process.env.REACT_APP_API_URL}/activities/${this.props.match.params.activityId}`, {
             title: this.state.title,
             description: this.state.description,
             category: this.state.category

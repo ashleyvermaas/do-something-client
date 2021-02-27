@@ -16,7 +16,7 @@ class EditProfile extends Component {
         const username = this.state.username;
         const email = this.state.email;
 
-        axios.put(`http://localhost:5000/api/my-profile`, { username, email }, {withCredentials:true})
+        axios.put(`${process.env.REACT_APP_API_URL}/my-profile`, { username, email }, {withCredentials:true})
         .then( () => {
             this.props.toggleForm()
         }, error => {

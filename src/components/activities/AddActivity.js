@@ -12,7 +12,7 @@ class AddActivity extends Component {
 
     handleFormSubmit = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:5000/api/activities", {
+        axios.post(`${process.env.REACT_APP_API_URL}/activities`, {
             title: this.state.title,
             description: this.state.description,
             category: this.state.category

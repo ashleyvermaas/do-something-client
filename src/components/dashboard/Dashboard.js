@@ -14,7 +14,7 @@ class Dashboard extends Component {
     }
 
     getAllActivities = () => {
-        axios.get(`http://localhost:5000/api/activities`, { withCredentials: true })
+        axios.get(`${process.env.REACT_APP_API_URL}/activities`, { withCredentials: true })
             .then((responseFromApi) => {
                 this.setState({
                     listOfActivities: responseFromApi.data

@@ -19,7 +19,7 @@ class ActivityDetails extends Component {
     }
 
     getActivityDetails = () => {
-        axios.get(`http://localhost:5000/api/activities/${this.props.match.params.activityId}`, { withCredentials: true })
+        axios.get(`${process.env.REACT_APP_API_URL}/activities/${this.props.match.params.activityId}`, { withCredentials: true })
             .then((responseFromApi) => {
                 const selectedActivity = responseFromApi.data
                 this.setState(selectedActivity)
@@ -31,7 +31,7 @@ class ActivityDetails extends Component {
     }
 
     deleteActivity = () => {
-        axios.delete(`http://localhost:5000/api/activities/${this.props.match.params.activityId}`, { withCredentials: true })
+        axios.delete(`${process.env.REACT_APP_API_URL}/activities/${this.props.match.params.activityId}`, { withCredentials: true })
             .then(() => {
                 this.props.history.push('/activities');
             }, (error) => console.log(error))

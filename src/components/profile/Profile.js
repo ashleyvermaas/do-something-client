@@ -22,7 +22,7 @@ class Profile extends Component {
     }
 
     deleteProfile = () => {
-        axios.delete(`http://localhost:5000/api/my-profile`, { withCredentials: true })
+        axios.delete(`${process.env.REACT_APP_API_URL}/my-profile`, { withCredentials: true })
             .then(() => {
                 this.logoutUser();
                 this.props.history.push('/');
