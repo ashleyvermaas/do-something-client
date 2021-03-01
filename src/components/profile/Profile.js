@@ -10,7 +10,8 @@ class Profile extends Component {
         super(props);
         this.service = new AuthService();
         this.state = {
-            showForm: false
+            showForm: false,
+            showWarning: false
         }
     }
 
@@ -33,6 +34,10 @@ class Profile extends Component {
         this.state.showForm ? this.setState({ showForm: false }) : this.setState({ showForm: true })
     }
 
+    toggleWarning = () => {
+        this.state.showWarning ? this.setState({ showWarning: false }) : this.setState({ showWarning: true })
+    }
+
     render() {
         return (
             <div>
@@ -46,14 +51,20 @@ class Profile extends Component {
                         <img src={this.props.user.imageUrl} />
                         <p>Username: {this.props.user.username}</p>
                         <p>Email: {this.props.user.email}</p>
-                        <button onClick={this.deleteProfile}>Delete profile</button>
+                        <button onClick={this.toggleWarning}>Delete profile</button>
+                        {this.state.showWarning ?
+                            <div>
+                                <p>Are you sure you want to delete your account?</p>
+                                <button onClick={this.deleteProfile}>Yes, delete my account</button>
+                            </div>
+                            :
+                            null
+                        }
                     </div>
                 }
-
                 <button onClick={this.toggleForm}>
                     {this.state.showForm ? "Go back" : "Edit Profile"}
                 </button>
-                
             </div>
         )
     }
