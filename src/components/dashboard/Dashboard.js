@@ -35,6 +35,14 @@ class Dashboard extends Component {
     }
 
     render() {
+        const completedActivities = this.state.listOfActivities.filter(activity => (activity.status.includes("Completed"))).map(activity => {
+            return (
+                <div key={activity._id}>
+                    <p>{activity.title}</p>
+                </div>
+            )
+        })
+
         return (
             <div>
                 <hr></hr>
@@ -51,8 +59,9 @@ class Dashboard extends Component {
                         <h2>Events</h2>
                     </div>
                     <div>
-                    <h2>Doing</h2>
+                        <h2>Doing</h2>
                         <h2>Completed</h2>
+                        {completedActivities}
                     </div>
                 </section>
                 <hr></hr>
