@@ -43,7 +43,7 @@ class Profile extends Component {
             <div>
                 {this.state.showForm ?
                     <div>
-                        <EditProfile {...this.props} toggleForm={this.toggleForm} />
+                        <EditProfile {...this.props} toggleForm={this.toggleForm} updateUserDetails={this.props.updateUserDetails} />
                     </div>
                     :
                     <div>

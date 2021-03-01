@@ -32,9 +32,14 @@ class App extends Component {
     })
   }
 
-  updateUserDetails(username, email){
-    // update state.loggedInUser.username
-    // update state.loggedInUser.email
+  updateUserDetails = (username, email) => {
+    this.setState(prevState => ({
+      loggedInUser: {
+        ...prevState.loggedInUser,
+        username: username,
+        email: email
+      }
+    }))
   }
 
   render() {
@@ -47,13 +52,13 @@ class App extends Component {
 
           <Route exact path="/login" render={(props) => <Login {...props} setUser={this.setTheUser} />} />
 
-          <ProtectedRoute user={this.state.loggedInUser} exact path="/dashboard" component={Dashboard} setUser={this.setTheUser}/>
+          <ProtectedRoute user={this.state.loggedInUser} exact path="/dashboard" component={Dashboard} setUser={this.setTheUser} />
 
-          <ProtectedRoute user={this.state.loggedInUser} exact path="/my-profile" component={Profile} setUser={this.setTheUser}/>
+          <ProtectedRoute user={this.state.loggedInUser} exact path="/my-profile" component={Profile} setUser={this.setTheUser} updateUserDetails={this.updateUserDetails} />
 
-          <ProtectedRoute user={this.state.loggedInUser} exact path="/activities" component={ActivitiesList} setUser={this.setTheUser}/>
+          <ProtectedRoute user={this.state.loggedInUser} exact path="/activities" component={ActivitiesList} setUser={this.setTheUser} />
 
-          <ProtectedRoute user={this.state.loggedInUser} exact path="/activities/:activityId" component={ActivityDetails} setUser={this.setTheUser}/>
+          <ProtectedRoute user={this.state.loggedInUser} exact path="/activities/:activityId" component={ActivityDetails} setUser={this.setTheUser} />
         </Switch>
       </div>
     );
