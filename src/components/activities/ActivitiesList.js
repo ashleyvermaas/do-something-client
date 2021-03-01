@@ -3,18 +3,22 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Sidebar from '../navbars/Sidebar';
 import AddActivity from './AddActivity';
+import Searchbar from '../searchbar/Searchbar';
 
 class ActivitiesList extends Component {
     state = {
         listOfActivities: [],
-        showForm: false
+        showForm: false,
+        displayedActivities: [],
+        searchInput: ''
     }
 
     getAllActivities = () => {
         axios.get(`${process.env.REACT_APP_API_URL}/activities`, { withCredentials: true })
             .then((responseFromApi) => {
                 this.setState({
-                    listOfActivities: responseFromApi.data
+                    listOfActivities: responseFromApi.data,
+                    displayedActivities: [...responseFromApi.data]
                 })
             }, error => console.log(error));
     }
@@ -39,8 +43,15 @@ class ActivitiesList extends Component {
             });
     }
 
+    handleActivitySearch = (searchInput) => {
+        const filteredList = this.state.listOfActivities.filter(activity => (activity.title.toUpperCase().includes(searchInput.toUpperCase())))
+        this.setState({
+            displayedActivities: filteredList
+        })
+    }
+
     render() {
-        const activities = this.state.listOfActivities.map(activity => {
+        const activities = this.state.displayedActivities.map(activity => {
             return (
                 <div key={activity._id}>
                     <h4>{activity.title}</h4>
@@ -62,6 +73,7 @@ class ActivitiesList extends Component {
                     </div>
                     :
                     <div>
+                        <Searchbar handleActivitySearch={this.handleActivitySearch} />
                         {activities}
                     </div>}
 
