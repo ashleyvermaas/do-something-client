@@ -2,12 +2,14 @@ import React, { Component } from 'react'
 import Sidebar from '../navbars/Sidebar';
 import axios from 'axios';
 
+
 class EditProfile extends Component {
     constructor(props) {
         super(props);
         this.state = {
-        username: this.props.user.username,
-        email: this.props.user.email,
+            username: this.props.user.username,
+            email: this.props.user.email,
+            imageUrl: this.props.user.imageUrl
         }
     }
 
@@ -15,14 +17,15 @@ class EditProfile extends Component {
         e.preventDefault();
         const username = this.state.username;
         const email = this.state.email;
+        const imageUrl = this.state.imageUrl
 
-        axios.put(`${process.env.REACT_APP_API_URL}/my-profile`, { username, email }, {withCredentials:true})
-        .then( () => {
-            this.props.updateUserDetails(username, email)
-            this.props.toggleForm()
-        }, error => {
-            console.log(error)
-        })
+        axios.put(`${process.env.REACT_APP_API_URL}/my-profile`, { username, email, imageUrl }, { withCredentials: true })
+            .then(() => {
+                this.props.updateUserDetails(username, email, imageUrl)
+                this.props.toggleForm()
+            }, error => {
+                console.log(error)
+            })
     }
 
     handleChange = (e) => {
@@ -30,6 +33,19 @@ class EditProfile extends Component {
         this.setState({
             [name]: value
         });
+    }
+
+    handleFileUpload = (event) => {
+        const uploadData = new FormData();
+        uploadData.append("imageUrl", event.target.files[0]);
+
+        axios.post(`${process.env.REACT_APP_API_URL}/upload`, uploadData)
+            .then(response => {
+                this.setState({ imageUrl: response.data.secure_url });
+            })
+            .catch(err => {
+                console.log("An error occurred while uploading the file: ", err);
+            });
     }
 
     render() {
@@ -42,6 +58,9 @@ class EditProfile extends Component {
 
                     <label>Email:</label>
                     <input type="email" name="email" value={this.state.email} onChange={e => this.handleChange(e)} />
+
+                    <label>Profile picture</label>
+                    <input type="file" name="imageUrl" accept="image/png, image/jpg" onChange={(e) => this.handleFileUpload(e)} />
 
                     <input type="submit" value="Save changes" />
                 </form>

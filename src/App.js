@@ -32,12 +32,14 @@ class App extends Component {
     })
   }
 
-  updateUserDetails = (username, email) => {
+
+  updateUserDetails = (username, email, imageUrl) => {
     this.setState(prevState => ({
       loggedInUser: {
         ...prevState.loggedInUser,
         username: username,
-        email: email
+        email: email,
+        imageUrl: imageUrl
       }
     }))
   }
