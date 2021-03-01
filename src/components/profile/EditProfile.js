@@ -52,6 +52,7 @@ class EditProfile extends Component {
         return (
             <div>
                 <h1>Edit profile</h1>
+                <img src={this.props.user.imageUrl} />
                 <form onSubmit={this.handleFormSubmit}>
                     <label>Username:</label>
                     <input type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
