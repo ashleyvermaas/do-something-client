@@ -18,6 +18,7 @@ import ActivityDetails from './components/activities/ActivityDetails';
 import EditActivity from './components/activities/EditActivity.js';
 import AddActivity from './components/activities/AddActivity';
 
+import EventsList from './components/events/EventsList';
 
 import ProtectedRoute from './components/auth/ProtectedRoute';
 
@@ -61,6 +62,8 @@ class App extends Component {
           <ProtectedRoute user={this.state.loggedInUser} exact path="/activities" component={ActivitiesList} setUser={this.setTheUser} />
 
           <ProtectedRoute user={this.state.loggedInUser} exact path="/activities/:activityId" component={ActivityDetails} setUser={this.setTheUser} />
+
+          <ProtectedRoute user={this.state.loggedInUser} exact path="/events" component={EventsList} setUser={this.setTheUser} />
         </Switch>
       </div>
     );
