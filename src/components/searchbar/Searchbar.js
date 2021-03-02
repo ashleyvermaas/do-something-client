@@ -13,7 +13,7 @@ class Searchbar extends Component {
         this.setState({
             searchInput: value
         });
-        this.props.handleActivitySearch(value)
+        this.props.handleSearch(value)
     }
 
     render() {

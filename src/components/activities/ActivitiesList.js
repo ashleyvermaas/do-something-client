@@ -79,7 +79,7 @@ class ActivitiesList extends Component {
                     :
                     <div>
                         <button onClick={this.toggleSearchbar}>Search</button>
-                        {this.state.showSearchbar ? <Searchbar handleActivitySearch={this.handleActivitySearch} /> : null}
+                        {this.state.showSearchbar ? <Searchbar handleSearch={this.handleActivitySearch} /> : null}
 
                         {activities}
                     </div>}
