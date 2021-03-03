@@ -56,7 +56,7 @@ class Dashboard extends Component {
                 <hr></hr>
                 <section>
                     <div>
-                        <h2>Events</h2>
+                        <h2>Something cool</h2>
                     </div>
                     <div>
                         <h2>Doing</h2>
