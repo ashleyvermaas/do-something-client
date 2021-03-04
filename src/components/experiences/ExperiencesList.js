@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import AddExperience from './AddExperience';
+import EditExperience from './EditExperience';
 
 class ExperiencesList extends Component {
     deleteExperience = (e) => {
-        const experienceId = e.target.id 
+        const experienceId = e.target.experienceId 
         axios.delete(`${process.env.REACT_APP_API_URL}/experiences/${experienceId}`, { withCredentials: true })
             .then(() => {
                 this.props.getActivityDetails();
@@ -23,7 +24,8 @@ class ExperiencesList extends Component {
                             <p>{experience.description}</p>
                             <p>{experience.rating}</p>
                             <img src={experience.imageUrl} />
-                            <button onClick={this.deleteExperience} id={experience._id}>Delete experience</button>
+                            <EditExperience experience={experience} getActivityDetails={this.props.getActivityDetails} /> 
+                            <button onClick={this.deleteExperience} experienceId={experience._id}>Delete experience</button>
                         </div>
                     )
                 })}
