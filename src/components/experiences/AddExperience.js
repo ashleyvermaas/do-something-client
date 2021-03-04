@@ -42,11 +42,13 @@ class AddExperience extends Component {
         axios.post(`${process.env.REACT_APP_API_URL}/activities/${activityId}/experiences`, { date, description, rating, imageUrl }, { withCredentials: true })
             .then(() => {
                 this.props.getActivityDetails();
+                this.props.toggleForm();
                 this.setState({
                     date: "",
                     description: "",
                     rating: "",
                     imageUrl: "",
+                    showForm: false,
                 })
             })
             .catch((error) => {
