@@ -29,6 +29,7 @@ class ActivityDetails extends Component {
             }, error => console.log(error))
     }
 
+
     componentDidMount() {
         this.getActivityDetails()
     }
@@ -60,7 +61,7 @@ class ActivityDetails extends Component {
                         
                         <AddExperience activity={this.state._id} />
 
-                        <ExperiencesList experiences={this.state.experiences} />
+                        <ExperiencesList experiences={this.state.experiences} getActivityDetails={this.getActivityDetails} />
 
                         <button onClick={this.deleteActivity}>Delete</button>
                         <Link to={'/activities'}>
