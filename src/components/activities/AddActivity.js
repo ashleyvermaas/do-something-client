@@ -8,6 +8,7 @@ class AddActivity extends Component {
         title: "",
         description: "",
         category: "",
+        showForm: false,
     }
 
     handleFormSubmit = (e) => {
@@ -19,11 +20,11 @@ class AddActivity extends Component {
         }, { withCredentials: true })
             .then((res) => {
                 this.props.getAllActivities()
-                this.props.toggleForm()
                 this.setState({
                     title: "",
                     description: "",
-                    category: ""
+                    category: "",
+                    showForm: false
                 });
             }, (error) => console.log(error))
     }
@@ -35,9 +36,14 @@ class AddActivity extends Component {
         });
     }
 
+    toggleForm = () => {
+        this.state.showForm ? this.setState({ showForm: false }) : this.setState({ showForm: true })
+    }
+
     render() {
         return (
             <div>
+            {this.state.showForm ?
                 <form onSubmit={this.handleFormSubmit}>
                     <label>Title:</label>
                     <input name="title" value={this.state.title} type="text" onChange={this.handleChange} />
@@ -50,6 +56,12 @@ class AddActivity extends Component {
 
                     <input type="submit" value="Create" />
                 </form>
+                : null 
+                }
+
+                <button onClick={this.toggleForm}>
+                    {this.state.showForm ? "Go back" : "Create Activity"}
+                </button>
             </div>
         )
     }

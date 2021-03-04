@@ -8,7 +8,6 @@ import Searchbar from '../searchbar/Searchbar';
 class ActivitiesList extends Component {
     state = {
         listOfActivities: [],
-        showForm: false,
         displayedActivities: [],
         searchInput: '',
         showSearchbar: false
@@ -72,21 +71,12 @@ class ActivitiesList extends Component {
         })
         return (
             <div>
-                {this.state.showForm ?
-                    <div>
-                        <AddActivity toggleForm={this.toggleForm} getAllActivities={this.getAllActivities} />
-                    </div>
-                    :
-                    <div>
-                        <button onClick={this.toggleSearchbar}>Search</button>
-                        {this.state.showSearchbar ? <Searchbar handleSearch={this.handleActivitySearch} /> : null}
+                <AddActivity getAllActivities={this.getAllActivities} />
 
-                        {activities}
-                    </div>}
+                <button onClick={this.toggleSearchbar}>Search</button>
+                {this.state.showSearchbar ? <Searchbar handleSearch={this.handleActivitySearch} /> : null}
 
-                <button onClick={this.toggleForm}>
-                    {this.state.showForm ? "Go back" : "Create Activity"}
-                </button>
+                {activities}
             </div>
         )
     }
