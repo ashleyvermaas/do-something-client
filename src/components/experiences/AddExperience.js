@@ -37,11 +37,11 @@ class AddExperience extends Component {
         const description = this.state.description;
         const rating = this.state.rating;
         const imageUrl = this.state.imageUrl;
-        const activityId = this.props.activity;
+        const activityId = this.props.activityId;
 
         axios.post(`${process.env.REACT_APP_API_URL}/activities/${activityId}/experiences`, { date, description, rating, imageUrl }, { withCredentials: true })
-            .then((newExperience) => {
-                console.log(newExperience)
+            .then(() => {
+                this.props.getActivityDetails();
                 this.setState({
                     date: "",
                     description: "",

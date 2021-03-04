@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import AddExperience from './AddExperience';
 
 class ExperiencesList extends Component {
     deleteExperience = (e) => {
@@ -13,6 +14,8 @@ class ExperiencesList extends Component {
     render() {
         return (
             <div>
+             <AddExperience activityId={this.props.activityId} getActivityDetails={this.props.getActivityDetails} />
+
                 {this.props.experiences.map(experience => {
                     return(
                         <div key={experience._id}>

@@ -58,10 +58,8 @@ class ActivityDetails extends Component {
                         <p>{this.state.description}</p>
                         <p>{this.state.category}</p>
                         <p>{this.state.status}</p>
-                        
-                        <AddExperience activity={this.state._id} />
-
-                        <ExperiencesList experiences={this.state.experiences} getActivityDetails={this.getActivityDetails} />
+                    
+                        <ExperiencesList experiences={this.state.experiences} activityId={this.state._id} getActivityDetails={this.getActivityDetails} />
 
                         <button onClick={this.deleteActivity}>Delete</button>
                         <Link to={'/activities'}>
