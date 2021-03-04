@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Sidebar from '../navbars/Sidebar';
 import EditActivity from './EditActivity';
 import AddExperience from '../experiences/AddExperience';
+import ExperiencesList from '../experiences/ExperiencesList';
 
 class ActivityDetails extends Component {
     constructor(props) {
@@ -15,7 +16,8 @@ class ActivityDetails extends Component {
             status: "",
             owner: "",
             _id: "",
-            showForm: false
+            showForm: false,
+            experiences: []
         }
     }
 
@@ -57,6 +59,8 @@ class ActivityDetails extends Component {
                         <p>{this.state.status}</p>
                         
                         <AddExperience activity={this.state._id} />
+
+                        <ExperiencesList experiences={this.state.experiences} />
 
                         <button onClick={this.deleteActivity}>Delete</button>
                         <Link to={'/activities'}>
