@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Sidebar from '../navbars/Sidebar';
 import axios from 'axios';
 
 class EditActivity extends Component {

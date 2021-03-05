@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import Sidebar from '../navbars/Sidebar';
 import { Link } from 'react-router-dom';
 
 class Dashboard extends Component {

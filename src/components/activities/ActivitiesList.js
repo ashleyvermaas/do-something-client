@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Sidebar from '../navbars/Sidebar';
 import AddActivity from './AddActivity';
 import Searchbar from '../searchbar/Searchbar';
 

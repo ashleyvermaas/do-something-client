@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AuthService from '../services/auth-service';
 import { Link } from 'react-router-dom';
-import Navbar from '../navbars/Navbar';
+import Navbar from '../navbar/Navbar';
 
 class Login extends Component {
     state = {

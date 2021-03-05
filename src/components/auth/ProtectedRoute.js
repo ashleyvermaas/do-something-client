@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import Sidebar from '../navbars/Sidebar';
+import Sidebar from '../sidebar/Sidebar';
 
 const ProtectedRoute = ({ component: Component, user, setUser, ...rest }) => {
     return (

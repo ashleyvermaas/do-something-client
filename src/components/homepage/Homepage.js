@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../navbars/Navbar';
+import Navbar from '../navbar/Navbar';
 import { Link } from 'react-router-dom';
 
 function Homepage(props) {

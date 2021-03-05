@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Sidebar from '../navbars/Sidebar';
 import EditActivity from './EditActivity';
 import AddExperience from '../experiences/AddExperience';
 import ExperiencesList from '../experiences/ExperiencesList';

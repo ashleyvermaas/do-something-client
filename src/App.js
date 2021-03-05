@@ -6,9 +6,6 @@ import Homepage from './components/homepage/Homepage';
 import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
 
-import Navbar from './components/navbars/Navbar';
-import Sidebar from './components/navbars/Sidebar';
-
 import Dashboard from './components/dashboard/Dashboard';
 import Profile from './components/profile/Profile';
 import EditProfile from './components/profile/EditProfile';
