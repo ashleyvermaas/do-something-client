@@ -4,6 +4,10 @@ import AddExperience from './AddExperience';
 import EditExperience from './EditExperience';
 
 class ExperiencesList extends Component {
+    state = {
+        selectedExperience: ""
+    }
+
     deleteExperience = (experienceId) => {
         axios.delete(`${process.env.REACT_APP_API_URL}/experiences/${experienceId}`, { withCredentials: true })
             .then(() => {
@@ -11,20 +15,30 @@ class ExperiencesList extends Component {
             }, (error) => console.log(error))
     }
 
+
+    selectExperience = (experienceId) => {
+        this.state.selectedExperience ? this.setState({ selectedExperience: "" }) : this.setState({ selectedExperience: experienceId })
+    }
+
     render() {
         return (
             <div>
-             <AddExperience activityId={this.props.activityId} getActivityDetails={this.props.getActivityDetails} />
+                <AddExperience activityId={this.props.activityId} getActivityDetails={this.props.getActivityDetails} />
 
                 {this.props.experiences.map(experience => {
                     const experienceId = experience._id
-                    return(
+                    return (
                         <div key={experience._id}>
-                            <p>{experience.date}</p>
-                            <p>{experience.description}</p>
-                            <p>{experience.rating}</p>
-                            <img src={experience.imageUrl} />
-                            <EditExperience experience={experience} getActivityDetails={this.props.getActivityDetails} /> 
+                            {this.state.selectedExperience === experience._id ? null :
+                                <div>
+                                    <p>{experience.date}</p>
+                                    <p>{experience.description}</p>
+                                    <p>{experience.rating}</p>
+                                    <img src={experience.imageUrl} />
+                                </div>
+                            }
+
+                            <EditExperience experience={experience} getActivityDetails={this.props.getActivityDetails} selectExperience={() => this.selectExperience(experienceId)} />
                             <button onClick={() => this.deleteExperience(experienceId)}>Delete experience</button>
                         </div>
                     )

@@ -42,8 +42,9 @@ class EditExperience extends Component {
         const experienceId = this.props.experience._id;
 
         axios.put(`${process.env.REACT_APP_API_URL}/experiences/${experienceId}`, { date, description, rating, imageUrl }, { withCredentials: true })
-            .then(() => {
+            .then(() => {   
                 this.props.getActivityDetails();
+                this.toggleForm();
                 this.setState({
                     date: "",
                     description: "",
@@ -59,6 +60,7 @@ class EditExperience extends Component {
 
     toggleForm = () => {
         this.state.showForm ? this.setState({ showForm: false }) : this.setState({ showForm: true })
+        this.props.selectExperience(this.props.experience._id)
     }
 
     render() {
