@@ -17,8 +17,7 @@ class Sidebar extends Component {
     render() {
         return (
             <div>
-                <p>doSomething Logo</p>
-                <p><Link to={"/"}>Home</Link></p>
+                <p><Link to={"/"}>doSomething Logo</Link></p>
                 <p><Link to={"/dashboard"}>Dashboard</Link></p>
                 <p><Link to={"/activities"}>Activities</Link></p>
                 <p><Link to={"/my-profile"}>Profile</Link></p>
