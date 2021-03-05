@@ -74,11 +74,11 @@ class AddExperience extends Component {
                         <input type="file" name="imageUrl" accept="image/png, image/jpg" id="imageUrl-input" onChange={this.handleFileUpload} />
 
                         <label for="rating-input">Rating:</label>
-                        <input type="radio" name="rating" id="rating-input1" value="1" checked={this.state.rating === "1"} onChange={this.handleChange} /><label htmlFor="rating-input1">1</label>
-                        <input type="radio" name="rating" id="rating-input2" value="2" checked={this.state.rating === "2"} onChange={this.handleChange} /><label htmlFor="rating-input2">2</label>
-                        <input type="radio" name="rating" id="rating-input3" value="3" checked={this.state.rating === "3"} onChange={this.handleChange} /><label htmlFor="rating-input3">3</label>
-                        <input type="radio" name="rating" id="rating-input4" value="4" checked={this.state.rating === "4"} onChange={this.handleChange} /><label htmlFor="rating-input4">4</label>
-                        <input type="radio" name="rating" id="rating-input5" value="5" checked={this.state.rating === "5"} onChange={this.handleChange} /><label htmlFor="rating-input5">5</label>
+                        <input type="radio" name="rating" id="rating-input1" value="1" onChange={this.handleChange} /><label htmlFor="rating-input1">1</label>
+                        <input type="radio" name="rating" id="rating-input2" value="2" onChange={this.handleChange} /><label htmlFor="rating-input2">2</label>
+                        <input type="radio" name="rating" id="rating-input3" value="3" onChange={this.handleChange} /><label htmlFor="rating-input3">3</label>
+                        <input type="radio" name="rating" id="rating-input4" value="4" onChange={this.handleChange} /><label htmlFor="rating-input4">4</label>
+                        <input type="radio" name="rating" id="rating-input5" value="5" onChange={this.handleChange} /><label htmlFor="rating-input5">5</label>
 
                         <button type="submit">Add experience</button>
                     </form>
