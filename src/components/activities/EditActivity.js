@@ -20,6 +20,7 @@ class EditActivity extends Component {
         }, { withCredentials: true })
             .then((res) => {
                 this.props.toggleForm()
+                this.props.getActivityDetails()
                 this.setState({
                     title: "",
                     description: "",
@@ -48,7 +49,12 @@ class EditActivity extends Component {
                     <textarea name="description" value={this.state.description} onChange={this.handleChange} />
 
                     <label for="category">Category:</label>
-                    <input name="category" value={this.state.category} type="text" onChange={this.handleChange} />
+                        <select name="category" id="category" onChange={this.handleChange} value={this.state.category}>
+                            <option value="Active">Active</option>
+                            <option value="Social">Social</option>
+                            <option value="Creative">Creative</option>
+                            <option value="Funny">Funny</option>
+                        </select>
 
                     <input type="submit" value="Save changes" />
                 </form>

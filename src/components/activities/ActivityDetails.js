@@ -49,7 +49,7 @@ class ActivityDetails extends Component {
             <div>
                 {this.state.showForm ?
                     <div>
-                        <EditActivity {...this.props} theActivity={this.state} toggleForm={this.toggleForm} />
+                        <EditActivity {...this.props} theActivity={this.state} toggleForm={this.toggleForm} getActivityDetails={this.getActivityDetails} />
                     </div>
                     :
                     <div>
@@ -57,12 +57,9 @@ class ActivityDetails extends Component {
                         <p>{this.state.description}</p>
                         <p>{this.state.category}</p>
                         <p>{this.state.status}</p>
-                    
-                       
-                        <button onClick={this.deleteActivity}>Delete</button>
                         <Link to={'/activities'}>
                             <button>Go back</button>
-                        </Link> 
+                        </Link>
                         
                         <ExperiencesList experiences={this.state.experiences} activityId={this.state._id} getActivityDetails={this.getActivityDetails} />
 
