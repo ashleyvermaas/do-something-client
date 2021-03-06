@@ -83,6 +83,7 @@ class ActivitiesList extends Component {
                     <h4>{activity.title}</h4>
                     <p>{activity.description}</p>
                     <p>{activity.category}</p>
+                    <p>{activity.experiences.length} {activity.experiences.length == 1 ? "Experience" : "Experiences" }</p>
                     <input type="checkbox" id={activity._id} defaultChecked={activity.status === "Completed" ? true : false} onChange={(e) => this.handleCheckbox(e)} />
                     <label for={activity._id}>Completed</label>
                     <Link to={`/activities/${activity._id}`}>
