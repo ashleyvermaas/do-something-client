@@ -60,15 +60,16 @@ class ActivityDetails extends Component {
                         <Link to={'/activities'}>
                             <button>Go back</button>
                         </Link>
-                        
-                        <ExperiencesList experiences={this.state.experiences} activityId={this.state._id} getActivityDetails={this.getActivityDetails} />
-
-                    </div>}
+                    </div>
+                }
 
                 <button onClick={this.toggleForm}>
-                    {this.state.showForm ? "Go back" : "Edit Activity"}
+                    {this.state.showForm ? "Close form" : "Edit Activity"}
                 </button>
 
+                <button onClick={this.deleteActivity}>Delete</button>
+
+                <ExperiencesList experiences={this.state.experiences} activityId={this.state._id} getActivityDetails={this.getActivityDetails} />
             </div>
         )
     }

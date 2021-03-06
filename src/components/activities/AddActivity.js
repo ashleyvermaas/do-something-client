@@ -64,7 +64,7 @@ class AddActivity extends Component {
                 }
 
                 <button onClick={this.toggleForm}>
-                    {this.state.showForm ? "Go back" : "Create Activity"}
+                    {this.state.showForm ? "Close form" : "Create Activity"}
                 </button>
             </div>
         )
