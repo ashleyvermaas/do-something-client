@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import AddActivity from './AddActivity';
 import Searchbar from '../searchbar/Searchbar';
+import Filter from '../filter/Filter.js';
 
 class ActivitiesList extends Component {
     state = {
@@ -43,10 +44,37 @@ class ActivitiesList extends Component {
     }
 
     handleActivitySearch = (searchInput) => {
-        const filteredList = this.state.listOfActivities.filter(activity => (activity.title.toUpperCase().includes(searchInput.toUpperCase())))
+        const searchResult = this.state.listOfActivities.filter(activity => (activity.title.toUpperCase().includes(searchInput.toUpperCase())))
         this.setState({
-            displayedActivities: filteredList
+            displayedActivities: searchResult
         })
+    }
+
+    handleActivityFilter = (stateOfFilter) => {
+        const { active, social, creative, funny } = stateOfFilter
+        const currentFilters = []
+
+        if (active) {
+            currentFilters.push("Active")
+        }
+        if (social) {
+            currentFilters.push("Social")
+        }
+        if (creative) {
+            currentFilters.push("Creative")
+        }
+        if (funny) {
+            currentFilters.push("Funny")
+        }
+
+        const filterResult = this.state.listOfActivities.filter(activity => (currentFilters.some(element => activity.category.includes(element))))
+        {
+            filterResult.length > 0 ? this.setState({
+                displayedActivities: filterResult
+            }) : this.setState({
+                displayedActivities: this.state.listOfActivities
+            })
+        }
     }
 
     toggleSearchbar = () => {
@@ -74,7 +102,7 @@ class ActivitiesList extends Component {
 
                 <button onClick={this.toggleSearchbar}>Search</button>
                 {this.state.showSearchbar ? <Searchbar handleSearch={this.handleActivitySearch} /> : null}
-
+                <Filter handleActivityFilter={this.handleActivityFilter} />
                 {activities}
             </div>
         )
