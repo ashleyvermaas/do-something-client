@@ -42,20 +42,25 @@ class AddActivity extends Component {
     render() {
         return (
             <div>
-            {this.state.showForm ?
-                <form onSubmit={this.handleFormSubmit}>
-                    <label>Title:</label>
-                    <input name="title" value={this.state.title} type="text" onChange={this.handleChange} />
+                {this.state.showForm ?
+                    <form onSubmit={this.handleFormSubmit}>
+                        <label>Title:</label>
+                        <input name="title" value={this.state.title} type="text" onChange={this.handleChange} />
 
-                    <label>Description:</label>
-                    <textarea name="description" value={this.state.description} onChange={this.handleChange} />
+                        <label>Description:</label>
+                        <textarea name="description" value={this.state.description} onChange={this.handleChange} />
 
-                    <label for="category">Category:</label>
-                    <input name="category" value={this.state.category} type="text" onChange={this.handleChange} />
-
-                    <input type="submit" value="Create" />
-                </form>
-                : null 
+                        <label for="category">Category:</label>
+                        <select name="category" id="category" onChange={this.handleChange} >
+                            <option value="" selected disabled hidden></option>
+                            <option value="Active">Active</option>
+                            <option value="Social">Social</option>
+                            <option value="Creative">Creative</option>
+                            <option value="Funny">Funny</option>
+                        </select>
+                        <input type="submit" value="Create" />
+                    </form>
+                    : null
                 }
 
                 <button onClick={this.toggleForm}>
