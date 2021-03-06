@@ -4,7 +4,8 @@ class Searchbar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchInput: ""
+            searchInput: "",
+            showSearchbar: false
         }
     }
 
@@ -16,11 +17,16 @@ class Searchbar extends Component {
         this.props.handleSearch(value)
     }
 
+    toggleSearchbar = () => {
+        this.state.showSearchbar ? this.setState({ showSearchbar: false }) : this.setState({ showSearchbar: true })
+    }
+
     render() {
         return (
             <div>
-                Search 
-                <input type="text" name="search" value={this.state.searchInput} onChange={this.handleSearchInput} />
+                <button onClick={this.toggleSearchbar}>Search</button>
+                {this.state.showSearchbar ? <input type="text" name="search" value={this.state.searchInput} onChange={this.handleSearchInput} /> : null}
+                
             </div>
         )
     }

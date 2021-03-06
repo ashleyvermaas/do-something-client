@@ -10,7 +10,6 @@ class ActivitiesList extends Component {
         listOfActivities: [],
         displayedActivities: [],
         searchInput: '',
-        showSearchbar: false
     }
 
     getAllActivities = () => {
@@ -77,10 +76,6 @@ class ActivitiesList extends Component {
         }
     }
 
-    toggleSearchbar = () => {
-        this.state.showSearchbar ? this.setState({ showSearchbar: false }) : this.setState({ showSearchbar: true })
-    }
-
     render() {
         const activities = this.state.displayedActivities.map(activity => {
             return (
@@ -100,8 +95,7 @@ class ActivitiesList extends Component {
             <div>
                 <AddActivity getAllActivities={this.getAllActivities} />
 
-                <button onClick={this.toggleSearchbar}>Search</button>
-                {this.state.showSearchbar ? <Searchbar handleSearch={this.handleActivitySearch} /> : null}
+                <Searchbar handleSearch={this.handleActivitySearch} /> 
                 <Filter handleActivityFilter={this.handleActivityFilter} />
                 {activities}
             </div>
