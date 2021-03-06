@@ -19,8 +19,7 @@ class Filter extends Component {
             return {
                 [name]: !prevState[name]
             }
-        }, () => console.log(this.state));
-
+        }, () => this.props.handleActivityFilter(this.state));
     }
 
     render() {
