@@ -26,7 +26,6 @@ class Searchbar extends Component {
             <div>
                 <button onClick={this.toggleSearchbar}>Search</button>
                 {this.state.showSearchbar ? <input type="text" name="search" value={this.state.searchInput} onChange={this.handleSearchInput} /> : null}
-                
             </div>
         )
     }

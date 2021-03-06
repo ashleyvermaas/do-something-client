@@ -30,18 +30,6 @@ class ActivitiesList extends Component {
         this.state.showForm ? this.setState({ showForm: false }) : this.setState({ showForm: true })
     }
 
-    handleCheckbox = (e) => {
-        const newStatus = e.target.defaultChecked === true ? "To do" : "Completed";
-        axios.put(`${process.env.REACT_APP_API_URL}/activities/${e.target.id}`, {
-            status: newStatus
-        }, { withCredentials: true })
-            .then(
-                this.getAllActivities()
-            ).catch(err => {
-                console.log("An error occurred: ", err);
-            });
-    }
-
     handleActivitySearch = (searchInput) => {
         const searchResult = this.state.listOfActivities.filter(activity => (activity.title.toUpperCase().includes(searchInput.toUpperCase())))
         this.setState({
@@ -84,8 +72,6 @@ class ActivitiesList extends Component {
                     <p>{activity.description}</p>
                     <p>{activity.category}</p>
                     <p>{activity.experiences.length} {activity.experiences.length == 1 ? "Experience" : "Experiences" }</p>
-                    <input type="checkbox" id={activity._id} defaultChecked={activity.status === "Completed" ? true : false} onChange={(e) => this.handleCheckbox(e)} />
-                    <label for={activity._id}>Completed</label>
                     <Link to={`/activities/${activity._id}`}>
                         <p>More info</p>
                     </Link>
@@ -95,7 +81,6 @@ class ActivitiesList extends Component {
         return (
             <div>
                 <AddActivity getAllActivities={this.getAllActivities} />
-
                 <Searchbar handleSearch={this.handleActivitySearch} /> 
                 <Filter handleActivityFilter={this.handleActivityFilter} />
                 {activities}
