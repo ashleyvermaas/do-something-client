@@ -1,20 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import "./Navbar.css";
 
 function Navbar(props) {
     return (
-        <div>
-            <p><Link to={"/"}>doSomething Logo</Link></p>
-            <p><Link to={"/"}>Home</Link></p>
+        <nav className="navbar">
+            <Link to={"/"} className='text-link'><p className="navbar-logo">doSomething</p></Link>
             { props.user ?
-                <p><Link to={"/dashboard"}>Go to Dashboard</Link></p>
+                <Link to={"/dashboard"} className='text-link'><p>Go to Dashboard</p></Link>
                 :
-                <div>
-                    <p><Link to={"/login"}>Log in</Link></p>
-                    <p><Link to={"/signup"}>Sign up</Link></p>
+                <div className="navbar-auth">
+                    <Link to={"/login"} className='text-link'><p className="navbar-login">Log in</p></Link>
+                    <Link to={"/signup"} className='text-link'><p className="navbar-signup">Sign up</p></Link>
                 </div>
             }
-        </div>
+        </nav>
     )
 }
 

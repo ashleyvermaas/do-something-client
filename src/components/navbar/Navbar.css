@@ -1,0 +1,53 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    padding: 5px 50px;
+    justify-content: space-between;
+    text-decoration: none;
+    align-items: center;
+}
+
+.text-link {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.navbar-auth {
+    display: flex;
+    justify-content: space-between;
+    width: 180px;
+    align-items: center;
+}
+
+.navbar-signup {
+    color: white;
+    border-radius: 8px;
+    padding: 10px 20px;
+    background-color: #7161EF
+}
+
+.navbar-signup:hover {
+    background-color: #f5cf05
+}
+
+.navbar-signup:active {
+    background-color: #7161EF;
+}
+
+.navbar-login {
+    color: black;
+}
+
+.navbar-login:hover, .navbar-logo:hover {
+    color: #f5cf05;
+}
+
+.navbar-login:active, .navbar-logo:active  {
+    color: #7161EF;
+}
+
+
+
+
+
