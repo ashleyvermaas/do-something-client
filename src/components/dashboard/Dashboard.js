@@ -10,7 +10,7 @@ class Dashboard extends Component {
             randomActivity: "",
             listOfExperiences: [],
             counter: 0,
-            displayedExperience: ""
+            displayedExperience: "",
         }
     }
 
@@ -46,7 +46,7 @@ class Dashboard extends Component {
     }
 
     getNextExperience = () => {
-        if (this.state.counter < this.state.listOfExperiences.length - 1 ) {
+        if (this.state.counter < this.state.listOfExperiences.length - 1) {
             this.setState((prevState) => {
                 return {
                     counter: prevState.counter + 1,
@@ -68,14 +68,6 @@ class Dashboard extends Component {
     }
 
     render() {
-        const completedActivities = this.state.listOfActivities.filter(activity => (activity.status.includes("Completed"))).map(activity => {
-            return (
-                <div key={activity._id}>
-                    <p>{activity.title}</p>
-                </div>
-            )
-        })
-
         return (
             <div>
                 <h1>Dashboard</h1>
@@ -93,16 +85,18 @@ class Dashboard extends Component {
                 <section>
                     <div>
                         <h2>Last experiences</h2>
-                        <p>{this.state.displayedExperience ? this.state.displayedExperience.description : ""}</p>
-                        <button onClick={this.getNextExperience}>Next</button>
-                        <button onClick={this.getPrevExperience}>Previous</button>
+                        {this.state.displayedExperience ? <div>
+                            <p>{this.state.displayedExperience.description}</p>
+                            <img src={this.state.displayedExperience.imageUrl} />
+                            <Link to={`/activities/${this.state.displayedExperience.activity}`}>Details</Link>
+                        </div>
+                            : ""
+                        }
+                        <button onClick={this.getPrevExperience}>Previous</button><button onClick={this.getNextExperience}>Next</button>
                     </div>
                     <h2>Total experiences</h2>
                     {this.state.listOfExperiences.length}
 
-                    <div>
-                        <h2>Doing</h2>
-                    </div>
                 </section>
             </div>
         )
