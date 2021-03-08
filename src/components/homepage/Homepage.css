@@ -51,7 +51,7 @@
     border: 2px solid #f5cf05;
 }
 
-img {
+.header-img {
     object-fit: contain;
     height: 48%;
     width: 48%;

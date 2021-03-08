@@ -14,7 +14,7 @@ function Homepage(props) {
                         <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi corrupti magnam quidem cumque error, iste fugit in accusamus voluptatum perferendis atque maxime modi suscipit quam cum sapiente officia illum quibusdam!</h4>
                         <Link to='/signup' className='text-link'><p className="header-signup-btn">Get started</p></Link>
                     </div>
-                    <img src="/header-img.png" alt="woman on skateboard" />
+                    <img src="/header-img.png" alt="woman on skateboard" className="header-img" />
                 </header>
 
             </div>
