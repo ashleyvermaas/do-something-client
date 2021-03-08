@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import './Dashboard.css';
 
 class Dashboard extends Component {
     constructor(props) {
@@ -69,10 +70,10 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <div>
+            <div className="page-container">
                 <h1>Dashboard</h1>
-                <section>
-                    <h2>Random activity</h2>
+                <section className="random-activity-section">
+                    <h2>doSomething</h2>
 
                     <div>
                         <Link to={`/activities/${this.state.randomActivity._id}`}><p>{this.state.randomActivity.title}</p></Link>
