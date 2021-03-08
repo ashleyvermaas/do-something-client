@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import './EditProfile.css';
 
 
 class EditProfile extends Component {
@@ -8,7 +9,8 @@ class EditProfile extends Component {
         this.state = {
             username: this.props.user.username,
             email: this.props.user.email,
-            imageUrl: this.props.user.imageUrl
+            imageUrl: this.props.user.imageUrl,
+            showWarning: false
         }
     }
 
@@ -47,23 +49,42 @@ class EditProfile extends Component {
             });
     }
 
+    toggleWarning = () => {
+        this.state.showWarning ? this.setState({ showWarning: false }) : this.setState({ showWarning: true })
+    }
+
     render() {
         return (
-            <div>
-                <h1>Edit profile</h1>
-                <img src={this.props.user.imageUrl} />
+            <div className="page-container">
+                <h1>Settings</h1>
+                <h2>Edit profile</h2>
+                <div className="profile">
+                <img src={this.props.user.imageUrl} className="profile-img"/>
+                <div className="profile-text">
                 <form onSubmit={this.handleFormSubmit}>
                     <label>Username:</label>
-                    <input type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
+                    <input type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} className="edit-profile-input" />
 
                     <label>Email:</label>
-                    <input type="email" name="email" value={this.state.email} onChange={e => this.handleChange(e)} />
+                    <input type="email" name="email" value={this.state.email} onChange={e => this.handleChange(e)} className="edit-profile-input" />
 
                     <label>Profile picture</label>
-                    <input type="file" name="imageUrl" accept="image/png, image/jpg" onChange={(e) => this.handleFileUpload(e)} />
+                    <input type="file" name="imageUrl" accept="image/png, image/jpg" onChange={(e) => this.handleFileUpload(e)} className="edit-profile-input" />
 
                     <input type="submit" value="Save changes" />
                 </form>
+                <button onClick={this.toggleWarning}>Delete profile</button>
+                        {this.state.showWarning ?
+                            <div>
+                                <p>Are you sure you want to delete your account?</p>
+                                <button onClick={this.props.deleteProfile}>Yes, delete my account</button>
+                            </div>
+                            :
+                            null
+                        }
+                <button onClick={this.props.toggleForm}>Go back</button>
+                </div>
+                </div>
             </div>
         )
     }

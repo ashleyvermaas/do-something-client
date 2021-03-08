@@ -1,0 +1,48 @@
+.page-container h2 {
+    margin: 0;
+    margin-left: 50px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px;
+    margin-left: 50px;
+    margin-top: 30px;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.profile-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 60px;
+}
+
+.profile-text p {
+    margin-top: 0px; 
+    margin-bottom: 10px;
+}
+
+
+.profile-img {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+
+.edit-profile-btn {
+        margin-top: 20px;
+        color: white;
+        border-radius: 8px;
+        padding: 8px 18px;
+        background-color: #7161EF;
+        border: 2px solid #7161EF;
+}
+

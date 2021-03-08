@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import AuthService from '../services/auth-service';
 import EditProfile from './EditProfile';
+import './Profile.css'
 
 class Profile extends Component {
     constructor(props) {
@@ -10,7 +11,6 @@ class Profile extends Component {
         this.service = new AuthService();
         this.state = {
             showForm: false,
-            showWarning: false
         }
     }
 
@@ -33,37 +33,31 @@ class Profile extends Component {
         this.state.showForm ? this.setState({ showForm: false }) : this.setState({ showForm: true })
     }
 
-    toggleWarning = () => {
-        this.state.showWarning ? this.setState({ showWarning: false }) : this.setState({ showWarning: true })
-    }
 
     render() {
         return (
-            <div>
+            <div className="test">
                 {this.state.showForm ?
                     <div>
-                        <EditProfile {...this.props} toggleForm={this.toggleForm} updateUserDetails={this.props.updateUserDetails} />
+                        <EditProfile {...this.props} deleteProfile={this.deleteProfile} toggleForm={this.toggleForm} updateUserDetails={this.props.updateUserDetails} />
                     </div>
                     :
-                    <div>
-                        <h1>Profile</h1>
-                        <img src={this.props.user.imageUrl} />
-                        <p>Username: {this.props.user.username}</p>
-                        <p>Email: {this.props.user.email}</p>
-                        <button onClick={this.toggleWarning}>Delete profile</button>
-                        {this.state.showWarning ?
-                            <div>
-                                <p>Are you sure you want to delete your account?</p>
-                                <button onClick={this.deleteProfile}>Yes, delete my account</button>
+                    <div className="page-container">
+                        <h1>Settings</h1>
+                        <h2>Profile</h2>
+                        <div className="profile">
+                            <img src={this.props.user.imageUrl} className="profile-img" />
+                            <div className="profile-text">
+                                <h4>Username:</h4>
+                                <p>{this.props.user.username}</p>
+                                <h4>Email: </h4>
+                                <p>{this.props.user.email}</p>
+                                {this.state.showForm ? null :
+                                    <button onClick={this.toggleForm} className="edit-profile-btn">Edit Profile</button>}
                             </div>
-                            :
-                            null
-                        }
+                        </div>
                     </div>
                 }
-                <button onClick={this.toggleForm}>
-                    {this.state.showForm ? "Go back" : "Edit Profile"}
-                </button>
             </div>
         )
     }
