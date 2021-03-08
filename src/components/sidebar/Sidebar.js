@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import AuthService from '../services/auth-service';
+import './Sidebar.css'
 
 class Sidebar extends Component {
     constructor(props) {
@@ -16,12 +17,15 @@ class Sidebar extends Component {
     }
     render() {
         return (
-            <div>
-                <p><Link to={"/"}>doSomething Logo</Link></p>
-                <p><Link to={"/dashboard"}>Dashboard</Link></p>
-                <p><Link to={"/activities"}>Activities</Link></p>
-                <p><Link to={"/my-profile"}>Profile</Link></p>
-                <Link to={"/"}><button onClick={() => this.logoutUser()}>Log out</button></Link>
+            <div className="sidebar">
+                <ul>
+                    <Link to={"/"} className="text-link"><li className="sidebar-link">doSomething</li></Link>
+                    <Link to={"/dashboard"} className="text-link"><li className="sidebar-link">Dashboard</li></Link>
+                    <Link to={"/activities"} className="text-link"><li className="sidebar-link">Activities</li></Link>
+                    <Link to={"/my-profile"} className="text-link"><li className="sidebar-link">Profile</li></Link>
+                    <Link to={"/"}><button onClick={() => this.logoutUser()} className="logout-btn">Log out</button></Link>
+                </ul>
+
             </div>
         )
     }
