@@ -24,16 +24,19 @@
 .navbar-signup {
     color: white;
     border-radius: 8px;
-    padding: 10px 20px;
-    background-color: #7161EF
+    padding: 8px 18px;
+    background-color: #7161EF;
+    border: 2px solid #7161EF;
 }
 
 .navbar-signup:hover {
-    background-color: #f5cf05
+    background-color: #f5cf05;
+    border: 2px solid #f5cf05;
 }
 
 .navbar-signup:active {
-    background-color: #7161EF;
+    background-color: #FFE6BD;
+    border: 2px solid #f5cf05;;
 }
 
 .navbar-login {
@@ -45,7 +48,7 @@
 }
 
 .navbar-login:active, .navbar-logo:active  {
-    color: #7161EF;
+    color: black;
 }
 
 
