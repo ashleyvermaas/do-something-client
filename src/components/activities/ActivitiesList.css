@@ -1,0 +1,53 @@
+.activity-box {
+    border: 1px solid black;
+    min-width: 90%;
+    min-height: 15vh;
+    margin: 10px 0px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 0px;
+    padding-left: 40px;
+}
+
+.activity-box p, .activity-box h4 {
+    margin: 8px;
+}
+
+.category-tag {
+    border: 1px solid pink;
+    border-radius: 4px;
+    padding: 5px 10px;
+}
+
+.activity-box-details {
+    display: flex;
+}
+
+.activity-box-details p {
+    margin-right: 40px;
+    margin-bottom: 0px;
+}
+
+.activity-box-link:hover {
+    border-bottom: 1px solid #7161EF;
+    color: #7161EF;
+}
+
+.activity-box-link {
+    border-bottom: 1px solid black;
+}
+
+.list-actions {
+    display: flex;
+    min-width: 90%;
+    justify-content: space-between;
+    margin: 20px 0px;
+}
+
+.filter-actions {
+    display: flex;
+}
+

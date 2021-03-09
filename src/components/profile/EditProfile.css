@@ -13,3 +13,50 @@
     flex-direction: column;
     align-items: flex-start;
 }
+
+
+.delete-btn {
+    color: pink
+}
+
+.close-btn {
+    align-self: flex-start;
+    margin-left: 0px;
+    margin-right: 0px;
+    position: relative;
+    cursor: pointer;
+}
+
+.delete-btn {
+    margin-top: 20px;
+    color: white;
+    border-radius: 8px;
+    padding: 6px 12px;
+    background-color: #f01717;
+    border: 2px solid #f01717;
+}
+
+.save-btn {
+    color: white;
+    border-radius: 8px;
+    padding: 8px 18px;
+    background-color: #7161EF;
+    border: 2px solid #7161EF;
+}
+
+.delete-warning {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    border: 1px solid rgb(187, 187, 187);
+    padding: 20px;
+    background-color: rgb(250, 250, 250);
+}
+
+.delete-warning p {
+    margin-bottom: 0px;
+}
+
+.delete-warning button {
+    margin-top: 5px;
+}
+

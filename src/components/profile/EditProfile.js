@@ -59,31 +59,36 @@ class EditProfile extends Component {
                 <h1>Settings</h1>
                 <h2>Edit profile</h2>
                 <div className="profile">
-                <img src={this.props.user.imageUrl} className="profile-img"/>
-                <div className="profile-text">
-                <form onSubmit={this.handleFormSubmit}>
-                    <label>Username:</label>
-                    <input type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} className="edit-profile-input" />
 
-                    <label>Email:</label>
-                    <input type="email" name="email" value={this.state.email} onChange={e => this.handleChange(e)} className="edit-profile-input" />
+                    <img src={this.props.user.imageUrl} className="profile-img" />
+                    <div className="profile-text">
 
-                    <label>Profile picture</label>
-                    <input type="file" name="imageUrl" accept="image/png, image/jpg" onChange={(e) => this.handleFileUpload(e)} className="edit-profile-input" />
+                        <form onSubmit={this.handleFormSubmit}>
+                            <label>Username:</label>
+                            <input type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} className="edit-profile-input" />
 
-                    <input type="submit" value="Save changes" />
-                </form>
-                <button onClick={this.toggleWarning}>Delete profile</button>
+                            <label>Email:</label>
+                            <input type="email" name="email" value={this.state.email} onChange={e => this.handleChange(e)} className="edit-profile-input" />
+
+                            <label>Profile picture</label>
+                            <input type="file" name="imageUrl" accept="image/png, image/jpg" onChange={(e) => this.handleFileUpload(e)} className="edit-profile-input" />
+
+                            <input type="submit" value="Save changes" className="save-btn" />
+                        </form>
+
                         {this.state.showWarning ?
-                            <div>
+                            <div className="delete-warning">
+                                <button onClick={this.toggleWarning} className="close-btn">X</button>
                                 <p>Are you sure you want to delete your account?</p>
-                                <button onClick={this.props.deleteProfile}>Yes, delete my account</button>
+                                <button onClick={this.props.deleteProfile} className="delete-btn">Yes, delete my account</button>
+
                             </div>
                             :
-                            null
+                            <button onClick={this.toggleWarning} className="delete-btn">Delete profile</button>
                         }
-                <button onClick={this.props.toggleForm}>Go back</button>
-                </div>
+
+                    </div>
+                    <button onClick={this.props.toggleForm} className="close-btn">X</button>
                 </div>
             </div>
         )

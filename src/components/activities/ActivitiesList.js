@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import AddActivity from './AddActivity';
 import Searchbar from '../searchbar/Searchbar';
 import Filter from '../filter/Filter.js';
+import './ActivitiesList.css';
 
 class ActivitiesList extends Component {
     state = {
@@ -67,22 +68,30 @@ class ActivitiesList extends Component {
     render() {
         const activities = this.state.displayedActivities.map(activity => {
             return (
-                <div key={activity._id}>
+                <div key={activity._id} className="activity-box">
                     <h4>{activity.title}</h4>
                     <p>{activity.description}</p>
-                    <p>{activity.category}</p>
-                    <p>{activity.experiences.length} {activity.experiences.length == 1 ? "Experience" : "Experiences" }</p>
-                    <Link to={`/activities/${activity._id}`}>
-                        <p>More info</p>
-                    </Link>
+                    <p className="category-tag">{activity.category}</p>
+                    <div className="activity-box-details">
+                        <p>{activity.experiences.length} {activity.experiences.length == 1 ? "Experience" : "Experiences"}</p>
+                        <Link to={`/activities/${activity._id}`} className="text-link">
+                            <p className="activity-box-link">More info</p>
+                        </Link>
+                    </div>
                 </div>
             )
         })
         return (
-            <div>
-                <AddActivity getAllActivities={this.getAllActivities} />
-                <Searchbar handleSearch={this.handleActivitySearch} /> 
+            <div className="page-container">
+                <h1>Activities</h1>
+                <h2>View all</h2>
+                <div className="list-actions">
+                <div className="filter-actions">
                 <Filter handleActivityFilter={this.handleActivityFilter} />
+                <Searchbar handleSearch={this.handleActivitySearch} />
+                </div>
+                <AddActivity getAllActivities={this.getAllActivities} />
+                </div>
                 {activities}
             </div>
         )
