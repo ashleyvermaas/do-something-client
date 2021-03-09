@@ -24,8 +24,8 @@ class Filter extends Component {
 
     render() {
         return (
-            <div>
-                <button onClick={this.toggleForm}>Filter</button>
+            <div className="filter">
+                <p onClick={this.toggleForm} className="filter-btn">Filter</p>
 
                 {this.state.showForm ?
                     <div>
