@@ -73,9 +73,8 @@ class Dashboard extends Component {
             <div className="page-container">
                 <h1>Dashboard</h1>
                 <section className="random-activity-section">
-                    <h2>doSomething</h2>
-
-                    <div>
+                    <h2>doSomething Random</h2>
+                    <div className="random-activity-result">
                         <Link to={`/activities/${this.state.randomActivity._id}`}><p>{this.state.randomActivity.title}</p></Link>
                         <p>{this.state.randomActivity.description}</p>
                         <p>{this.state.randomActivity.category}</p>

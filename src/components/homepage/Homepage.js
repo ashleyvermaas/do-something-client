@@ -5,7 +5,7 @@ import './Homepage.css';
 
 function Homepage(props) {
     return (
-        <div className="page-container">
+        <div className="homepage-container">
             <Navbar user={props.user} />
             <div className="content-wrap">
                 <header className="header">

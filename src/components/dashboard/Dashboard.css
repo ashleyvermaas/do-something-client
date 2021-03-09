@@ -8,19 +8,27 @@
     padding: 50px;
 }
 
+.page-container h1 {
+    margin-top: 0px;
+}
+
 .random-activity-section {
     border: 1px solid;
     border-color: #ECE1F5;
     border-radius: 4px;
     min-height: 50vh;
-    width: 100%;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .random-activity-section h2 {
    font-size: 40px;
 }
 
-
-.page-container h1 {
-    margin-top: 0px;
+.random-activity-result {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
