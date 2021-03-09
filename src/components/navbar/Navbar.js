@@ -5,9 +5,9 @@ import "./Navbar.css";
 function Navbar(props) {
     return (
         <nav className="navbar">
-            <Link to={"/"} className='text-link'><p className="navbar-logo">doSomething</p></Link>
+            <Link to={"/"} className='text-link'><h3 className="navbar-logo">doSomething</h3></Link>
             { props.user ?
-                <Link to={"/dashboard"} className='text-link'><p>Go to Dashboard</p></Link>
+                <Link to={"/dashboard"} className='text-link'><p className="navbar-dashboard">Go to Dashboard</p></Link>
                 :
                 <div className="navbar-auth">
                     <Link to={"/login"} className='text-link'><p className="navbar-login">Log in</p></Link>

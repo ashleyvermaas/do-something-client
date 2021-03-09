@@ -39,11 +39,11 @@
     border: 2px solid #f5cf05;;
 }
 
-.navbar-login {
+.navbar-login, .navbar-dashboard {
     color: black;
 }
 
-.navbar-login:hover, .navbar-logo:hover {
+.navbar-login:hover, .navbar-logo:hover, .navbar-dashboard:hover {
     color: #f5cf05;
 }
 
