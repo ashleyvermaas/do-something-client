@@ -19,11 +19,11 @@ class Sidebar extends Component {
         return (
             <div className="sidebar">
                 <ul>
-                    <Link to={"/"} className="text-link"><li className="sidebar-link">doSomething</li></Link>
-                    <Link to={"/dashboard"} className="text-link"><li className="sidebar-link">Dashboard</li></Link>
-                    <Link to={"/activities"} className="text-link"><li className="sidebar-link">Activities</li></Link>
-                    <Link to={"/my-profile"} className="text-link"><li className="sidebar-link">Settings</li></Link>
-                    <Link to={"/"}><button onClick={() => this.logoutUser()} className="logout-btn">Log out</button></Link>
+                    <Link to={"/"} className="text-link"><li className="sidebar-link"><h3>doSomething</h3></li></Link>
+                    <Link to={"/dashboard"} className="text-link"><li className="sidebar-link"><h4>Dashboard</h4></li></Link>
+                    <Link to={"/activities"} className="text-link"><li className="sidebar-link"><h4>Activities</h4></li></Link>
+                    <Link to={"/my-profile"} className="text-link"><li className="sidebar-link"><h4>Settings</h4></li></Link>
+                    <Link to={"/"}><button onClick={() => this.logoutUser()} className="logout-btn"><h4>Log out</h4></button></Link>
                 </ul>
 
             </div>
