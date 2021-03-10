@@ -47,6 +47,7 @@
     padding: 15px 18px;
     background-color: #7161EF;
     border: 2px solid #7161EF;
+    cursor: pointer;
 }
 
 .auth-page-submit:hover {
