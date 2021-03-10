@@ -1,5 +1,6 @@
 .activity-box {
-    border: 1px solid black;
+    border: 2px solid #8291E4;
+    background-color: white;
     min-width: 90%;
     min-height: 15vh;
     margin: 10px 0px;
@@ -17,7 +18,7 @@
 }
 
 .category-tag {
-    border: 1px solid pink;
+    border: 2px solid #D8BAEB;
     border-radius: 4px;
     padding: 5px 10px;
 }
@@ -44,7 +45,7 @@
     display: flex;
     min-width: 90%;
     justify-content: space-between;
-    margin: 20px 0px;
+    margin-bottom: 10px;
 }
 
 .filter-actions {

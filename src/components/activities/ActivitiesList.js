@@ -84,7 +84,7 @@ class ActivitiesList extends Component {
         return (
             <div className="page-container">
                 <h1>Activities</h1>
-                <h2>View all</h2>
+                <h3>View all</h3>
                 <div className="list-actions">
                 <div className="filter-actions">
                 <Filter handleActivityFilter={this.handleActivityFilter} />

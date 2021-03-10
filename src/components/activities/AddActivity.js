@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import './AddActivity.css'
 
 class AddActivity extends Component {
     state = {
@@ -42,30 +43,35 @@ class AddActivity extends Component {
     render() {
         return (
             <div>
+
+                {this.state.showForm ? null : <button onClick={this.toggleForm} className="create-btn">Create Activity</button>}
+
                 {this.state.showForm ?
-                    <form onSubmit={this.handleFormSubmit}>
-                        <label>Title:</label>
-                        <input name="title" value={this.state.title} type="text" onChange={this.handleChange} />
+                    <div className="add-activity-box">
+                        <button onClick={this.toggleForm} className="close-btn">X</button>
+                        <form onSubmit={this.handleFormSubmit}>
+                        <div>
+                            <label>Title:</label>
+                            <input name="title" value={this.state.title} type="text" onChange={this.handleChange} className="add-activity-input"/>
 
-                        <label>Description:</label>
-                        <textarea name="description" value={this.state.description} onChange={this.handleChange} />
+                            <label>Description:</label>
+                            <textarea name="description" value={this.state.description} onChange={this.handleChange} className="add-activity-input"/>
 
-                        <label for="category">Category:</label>
-                        <select name="category" id="category" onChange={this.handleChange} >
-                            <option value="" selected disabled hidden></option>
-                            <option value="Active">Active</option>
-                            <option value="Social">Social</option>
-                            <option value="Creative">Creative</option>
-                            <option value="Funny">Funny</option>
-                        </select>
-                        <input type="submit" value="Create" />
-                    </form>
+                            <label for="category">Category:</label>
+                            <select name="category" id="category" onChange={this.handleChange} className="add-activity-input">
+                                <option value="" selected disabled hidden></option>
+                                <option value="Active">Active</option>
+                                <option value="Social">Social</option>
+                                <option value="Creative">Creative</option>
+                                <option value="Funny">Funny</option>
+                            </select></div>
+                            <input type="submit" value="Create" className="add-activity-btn" />
+                        </form>
+                    </div>
                     : null
                 }
 
-                <button onClick={this.toggleForm}>
-                    {this.state.showForm ? "Close form" : "Create Activity"}
-                </button>
+
             </div>
         )
     }

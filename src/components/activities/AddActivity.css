@@ -1,0 +1,36 @@
+
+.add-activity-box {
+    border: 4px solid  #8291E4;
+    border-radius: 30px;
+    padding: 20px;
+    min-width: 20vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-activity-box button {
+    margin-left: 95%;
+    margin-top: 0px;
+}
+
+.add-activity-input {
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.add-activity-box form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-activity-btn {
+    width: 15%;
+    color: white;
+    border-radius: 8px;
+    padding: 8px 18px;
+    background-color: #7161EF;
+    border: 2px solid #7161EF;
+    cursor: pointer;
+    margin-top: 20px;
+}
