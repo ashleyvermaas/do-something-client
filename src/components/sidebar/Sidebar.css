@@ -1,6 +1,6 @@
 .sidebar {
     background-color: #7161EF;
-    padding: 50px;
+    padding: 35px;
     margin: 0px;
     display: flex;
     flex-direction: column;
@@ -21,6 +21,7 @@
 .sidebar ul li {
     margin: 20px 0px;
     color: white;
+
 }
 
 .sidebar-link, .logout-btn{
