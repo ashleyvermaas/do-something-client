@@ -1,3 +1,63 @@
 * {
-  font-family: 'Ubuntu', sans-serif
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 50px;
+  margin: 0px;
+}
+
+.page-container h3 {
+  margin-top: 0px;
+  font-size: 20px;
+}
+
+.page-container h1 {
+  margin-bottom: 20px;
+  font-size: 35px;
+}
+
+.save-btn, .create-btn {
+  color: white;
+  border-radius: 8px;
+  padding: 8px 18px;
+  background-color: #7161EF;
+  border: 2px solid #7161EF;
+  cursor: pointer
+}
+
+.close-btn {
+  align-self: flex-start;
+  margin-left: 0px;
+  margin-right: 0px;
+  position: relative;
+  font-weight: bold;
+  background-color: inherit;
+  border: none;
+}
+
+.edit-btn {
+  color: white;
+  border-radius: 8px;
+  padding: 8px 18px;
+  background-color: #7161EF;
+  border: 2px solid #7161EF;
+}
+
+.delete-btn {
+  margin-top: 20px;
+  color: white;
+  border-radius: 8px;
+  padding: 6px 12px;
+  background-color: #f01717;
+  border: 2px solid #f01717;
+}
+
+button {
+  cursor: pointer
 }
