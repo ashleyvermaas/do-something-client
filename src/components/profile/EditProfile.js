@@ -57,7 +57,7 @@ class EditProfile extends Component {
         return (
             <div className="page-container">
                 <h1>Settings</h1>
-                <h2>Edit profile</h2>
+                <h3>Edit profile</h3>
                 <div className="profile">
 
                     <img src={this.props.user.imageUrl} className="profile-img" />

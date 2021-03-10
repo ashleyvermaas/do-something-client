@@ -15,35 +15,6 @@
 }
 
 
-.delete-btn {
-    color: pink
-}
-
-.close-btn {
-    align-self: flex-start;
-    margin-left: 0px;
-    margin-right: 0px;
-    position: relative;
-    cursor: pointer;
-}
-
-.delete-btn {
-    margin-top: 20px;
-    color: white;
-    border-radius: 8px;
-    padding: 6px 12px;
-    background-color: #f01717;
-    border: 2px solid #f01717;
-}
-
-.save-btn {
-    color: white;
-    border-radius: 8px;
-    padding: 8px 18px;
-    background-color: #7161EF;
-    border: 2px solid #7161EF;
-}
-
 .delete-warning {
     margin-top: 20px;
     margin-bottom: 0px;
