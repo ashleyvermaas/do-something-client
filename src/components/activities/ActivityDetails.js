@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import EditActivity from './EditActivity';
 import AddExperience from '../experiences/AddExperience';
 import ExperiencesList from '../experiences/ExperiencesList';
+import './ActivityDetails.css';
 
 class ActivityDetails extends Component {
     constructor(props) {
@@ -33,43 +34,39 @@ class ActivityDetails extends Component {
         this.getActivityDetails()
     }
 
-    deleteActivity = () => {
-        axios.delete(`${process.env.REACT_APP_API_URL}/activities/${this.props.match.params.activityId}`, { withCredentials: true })
-            .then(() => {
-                this.props.history.push('/activities');
-            }, (error) => console.log(error))
-    }
-
     toggleForm = () => {
         this.state.showForm ? this.setState({ showForm: false }) : this.setState({ showForm: true })
     }
 
     render() {
         return (
-            <div>
-                {this.state.showForm ?
+            <div className="page-container">
+                <h1>Activities</h1>
+                {this.state.showForm ? <h3>Edit activity</h3> : <h3>Details</h3>}
+                <div className="activity-details-page">
                     <div>
-                        <EditActivity {...this.props} theActivity={this.state} toggleForm={this.toggleForm} getActivityDetails={this.getActivityDetails} />
+                        {this.state.showForm ?
+                            <div className="activity-box">
+                            <button onClick={this.toggleForm} className="close-btn">X</button>
+                                <EditActivity {...this.props} theActivity={this.state} toggleForm={this.toggleForm} getActivityDetails={this.getActivityDetails} />
+                            </div>
+                            :
+                            <div className="activity-box">
+                                <h4>{this.state.title}</h4>
+                                <p>{this.state.description}</p>
+                                <p className="category-tag">{this.state.category}</p>
+                                <div className="activity-box-details">
+                                <p>{this.state.experiences.length} {this.state.experiences.length == 1 ? "Experience" : "Experiences"}</p>
+                                <button onClick={this.toggleForm} className="edit-btn">Edit Activity</button>
+                                </div>
+                            </div>
+                        }
+
+                        
+
                     </div>
-                    :
-                    <div>
-                        <h4>{this.state.title}</h4>
-                        <p>{this.state.description}</p>
-                        <p>{this.state.category}</p>
-                        <p>{this.state.status}</p>
-                        <Link to={'/activities'}>
-                            <button>Go back</button>
-                        </Link>
-                    </div>
-                }
-
-                <button onClick={this.toggleForm}>
-                    {this.state.showForm ? "Close form" : "Edit Activity"}
-                </button>
-
-                <button onClick={this.deleteActivity}>Delete</button>
-
-                <ExperiencesList experiences={this.state.experiences} activityId={this.state._id} getActivityDetails={this.getActivityDetails} />
+                    <ExperiencesList experiences={this.state.experiences} activityId={this.state._id} getActivityDetails={this.getActivityDetails} />
+                </div>
             </div>
         )
     }

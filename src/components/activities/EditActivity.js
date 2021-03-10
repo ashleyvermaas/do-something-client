@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './EditActivity.css';
 
 class EditActivity extends Component {
     constructor(props) {
@@ -36,11 +37,17 @@ class EditActivity extends Component {
         });
     }
 
+    deleteActivity = () => {
+        axios.delete(`${process.env.REACT_APP_API_URL}/activities/${this.props.match.params.activityId}`, { withCredentials: true })
+            .then(() => {
+                this.props.history.push('/activities');
+            }, (error) => console.log(error))
+    }
+
 
     render() {
         return (
             <div>
-                <h1>Edit Activity</h1>
                 <form onSubmit={this.handleFormSubmit}>
                     <label>Title:</label>
                     <input name="title" value={this.state.title} type="text" onChange={this.handleChange} />
@@ -56,8 +63,9 @@ class EditActivity extends Component {
                             <option value="Funny">Funny</option>
                         </select>
 
-                    <input type="submit" value="Save changes" />
+                    <input type="submit" value="Save changes" className="save-btn" />
                 </form>
+                <button onClick={this.deleteActivity} className="delete-btn">Delete</button>
             </div>
         )
     }
