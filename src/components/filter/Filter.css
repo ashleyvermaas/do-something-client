@@ -1,0 +1,12 @@
+.filter-label {
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.filter-form {
+    margin-right: 30px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+
+}

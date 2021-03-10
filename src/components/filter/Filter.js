@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './Filter.css';
 
 class Filter extends Component {
     state = {
@@ -28,15 +29,15 @@ class Filter extends Component {
                 <p onClick={this.toggleForm} className="filter-btn">Filter</p>
 
                 {this.state.showForm ?
-                    <div>
+                    <div className="filter-form">
                         <input type="checkbox" id="active" name="active" onChange={(e) => this.handleFilterInput(e)} />
-                        <label for="active">Active</label>
+                        <label for="active" className="filter-label">Active</label>
                         <input type="checkbox" id="social" name="social" onChange={(e) => this.handleFilterInput(e)} />
-                        <label for="social">Social</label>
+                        <label for="social" className="filter-label">Social</label>
                         <input type="checkbox" id="funny" name="funny" onChange={(e) => this.handleFilterInput(e)} />
-                        <label for="funny">Funny</label>
+                        <label for="funny" className="filter-label">Funny</label>
                         <input type="checkbox" id="creative" name="creative" onChange={(e) => this.handleFilterInput(e)} />
-                        <label for="creative">Creative</label>
+                        <label for="creative" className="filter-label">Creative</label>
                     </div>
                     :
                     null
