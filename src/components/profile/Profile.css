@@ -1,30 +1,28 @@
-.page-container h2 {
-    margin: 0;
-    margin-left: 50px;
-}
-
 .profile {
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 50px;
-    margin-left: 50px;
-    margin-top: 30px;
-    width: 100%;
-    border: 1px solid black;
-    border-radius: 4px;
+    margin-top: 10px;
+    min-width: 100%;
+    min-height: 80%;
+    border: 2px solid #8291E4;
+    border-radius: 30px;
+    position: relative;
 }
 
 .profile-text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-right: 60px;
+    margin-right: 0px;
+    
 }
 
 .profile-text p {
     margin-top: 0px; 
     margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 
@@ -37,12 +35,5 @@
 }
 
 
-.edit-profile-btn {
-        margin-top: 20px;
-        color: white;
-        border-radius: 8px;
-        padding: 8px 18px;
-        background-color: #7161EF;
-        border: 2px solid #7161EF;
-}
+
 

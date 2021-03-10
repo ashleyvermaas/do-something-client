@@ -44,7 +44,7 @@ class Profile extends Component {
                     :
                     <div className="page-container">
                         <h1>Settings</h1>
-                        <h2>Profile</h2>
+                        <h3>Profile</h3>
                         <div className="profile">
                             <img src={this.props.user.imageUrl} className="profile-img" />
                             <div className="profile-text">
@@ -53,7 +53,7 @@ class Profile extends Component {
                                 <h4>Email: </h4>
                                 <p>{this.props.user.email}</p>
                                 {this.state.showForm ? null :
-                                    <button onClick={this.toggleForm} className="edit-profile-btn">Edit Profile</button>}
+                                    <button onClick={this.toggleForm} className="edit-btn">Edit Profile</button>}
                             </div>
                         </div>
                     </div>
