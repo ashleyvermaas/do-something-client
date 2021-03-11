@@ -51,13 +51,11 @@
 }
 
 .auth-page-submit:hover {
-    background-color: #f5cf05;
-    border: 2px solid #f5cf05;
+    background-color: #7261efbd;
 }
 
 .auth-page-submit:active {
-    background-color: #FFE6BD;
-    border: 2px solid #f5cf05;
+    background-color: #7161EF;
 }
 
 
@@ -66,5 +64,5 @@
 }
 
 .auth-page-link:hover {
-    color: #f5cf05;
+    border-bottom: 1px solid #7161EF;
 }
