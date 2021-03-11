@@ -64,5 +64,7 @@
 }
 
 .auth-page-link:hover {
-    border-bottom: 1px solid #7161EF;
+    border-bottom: 2px solid #7161EF;
+    font-weight: bold;
+
 }

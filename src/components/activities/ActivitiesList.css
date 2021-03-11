@@ -35,6 +35,8 @@
 .activity-box-link:hover {
     border-bottom: 1px solid #7161EF;
     color: #7161EF;
+    font-weight: bold;
+
 }
 
 .activity-box-link {

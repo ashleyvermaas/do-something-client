@@ -58,6 +58,10 @@
   border: 2px solid #f01717;
 }
 
+.create-btn:hover, .edit-btn:hover, .save-btn:hover {
+  background-color: #7261efbd;
+}
+
 button {
   cursor: pointer
 }
