@@ -41,6 +41,10 @@
   border: none;
 }
 
+.close-btn:hover {
+  color: rgba(0, 0, 0, 0.575);
+}
+
 .edit-btn {
   color: white;
   border-radius: 8px;
