@@ -4,6 +4,10 @@
     cursor: pointer;
 }
 
+.search-btn:hover, .filter-btn:hover {
+    border-bottom: 3px solid #7161EF;
+}
+
 .searchbar, .filter {
     display: flex;
     align-items: center;
