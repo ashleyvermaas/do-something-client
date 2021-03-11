@@ -25,7 +25,6 @@ class Sidebar extends Component {
                     <Link to={"/my-profile"} className="text-link"><li className="sidebar-link"><h4>Settings</h4></li></Link>
                     <Link to={"/"}><button onClick={() => this.logoutUser()} className="logout-btn"><h4>Log out</h4></button></Link>
                 </ul>
-
             </div>
         )
     }

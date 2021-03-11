@@ -1,10 +1,12 @@
 .sidebar {
     background-color: #7161EF;
-    padding: 35px;
+    padding: 50px 35px 50px 35px;
     margin: 0px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-height: 100%;
+    width: 150px;
 }
 
 
@@ -16,27 +18,25 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    position: fixed;
 }
 
 .sidebar ul li {
-    margin: 20px 0px;
     color: white;
-
 }
 
-.sidebar-link, .logout-btn{
-    color: black;
-}
 
 .sidebar-link:hover, .logout-btn:hover {
-    color: #f5cf05;
+    color: black
 }
 
 .logout-btn {
-    position: absolute;
-    bottom: 50px;
+    bottom: 50px; 
+    position: fixed;
     background-color: inherit;
     border: none;
     cursor: pointer;
     padding: 0px;
+    color: white;
+    font-size: 15px;
 }
