@@ -47,22 +47,23 @@ class EditActivity extends Component {
 
     render() {
         return (
-            <div>
+            <div className="edit-activity-box">
                 <form onSubmit={this.handleFormSubmit}>
-                    <label>Title:</label>
-                    <input name="title" value={this.state.title} type="text" onChange={this.handleChange} />
+                    <div className="edit-activity-content">
+                        <label>Title:</label>
+                        <input name="title" value={this.state.title} type="text" onChange={this.handleChange} className="edit-activity-input"/>
 
-                    <label>Description:</label>
-                    <textarea name="description" value={this.state.description} onChange={this.handleChange} />
+                        <label>Description:</label>
+                        <textarea name="description" value={this.state.description} onChange={this.handleChange} className="edit-activity-input"/>
 
-                    <label for="category">Category:</label>
-                        <select name="category" id="category" onChange={this.handleChange} value={this.state.category}>
+                        <label for="category">Category:</label>
+                        <select name="category" id="category" onChange={this.handleChange} value={this.state.category} className="edit-activity-input">
                             <option value="Active">Active</option>
                             <option value="Social">Social</option>
                             <option value="Creative">Creative</option>
                             <option value="Funny">Funny</option>
                         </select>
-
+                    </div>
                     <input type="submit" value="Save changes" className="save-btn" />
                 </form>
                 <button onClick={this.deleteActivity} className="delete-btn">Delete</button>
