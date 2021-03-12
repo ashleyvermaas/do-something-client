@@ -6,7 +6,8 @@ class Filter extends Component {
         active: false,
         social: false,
         creative: false,
-        funny: false,
+        relaxing: false,
+        educational: false,
         showForm: false
     }
 
@@ -34,8 +35,10 @@ class Filter extends Component {
                         <label for="active" className="filter-label">Active</label>
                         <input type="checkbox" id="social" name="social" onChange={(e) => this.handleFilterInput(e)} />
                         <label for="social" className="filter-label">Social</label>
-                        <input type="checkbox" id="funny" name="funny" onChange={(e) => this.handleFilterInput(e)} />
-                        <label for="funny" className="filter-label">Funny</label>
+                        <input type="checkbox" id="relaxing" name="relaxing" onChange={(e) => this.handleFilterInput(e)} />
+                        <label for="relaxing" className="filter-label">Relaxing</label>
+                        <input type="checkbox" id="educational" name="educational" onChange={(e) => this.handleFilterInput(e)} />
+                        <label for="educational" className="filter-label">Educational</label>
                         <input type="checkbox" id="creative" name="creative" onChange={(e) => this.handleFilterInput(e)} />
                         <label for="creative" className="filter-label">Creative</label>
                     </div>

@@ -39,7 +39,7 @@ class ActivitiesList extends Component {
     }
 
     handleActivityFilter = (stateOfFilter) => {
-        const { active, social, creative, funny } = stateOfFilter
+        const { active, social, creative, relaxing, educational } = stateOfFilter
         const currentFilters = []
 
         if (active) {
@@ -51,8 +51,11 @@ class ActivitiesList extends Component {
         if (creative) {
             currentFilters.push("Creative")
         }
-        if (funny) {
-            currentFilters.push("Funny")
+        if (relaxing) {
+            currentFilters.push("Relaxing")
+        }
+        if (educational) {
+            currentFilters.push("Educational")
         }
 
         const filterResult = this.state.listOfActivities.filter(activity => (currentFilters.some(element => activity.category.includes(element))))

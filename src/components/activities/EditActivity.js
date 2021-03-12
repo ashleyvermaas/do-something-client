@@ -61,7 +61,8 @@ class EditActivity extends Component {
                             <option value="Active">Active</option>
                             <option value="Social">Social</option>
                             <option value="Creative">Creative</option>
-                            <option value="Funny">Funny</option>
+                            <option value="Relaxing">Relaxing</option>
+                            <option value="Educational">Educational</option>
                         </select>
                     </div>
                     <input type="submit" value="Save changes" className="save-btn" />
