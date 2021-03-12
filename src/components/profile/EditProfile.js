@@ -40,7 +40,7 @@ class EditProfile extends Component {
         const uploadData = new FormData();
         uploadData.append("imageUrl", event.target.files[0]);
 
-        axios.post(`${process.env.REACT_APP_API_URL}/upload`, uploadData)
+        axios.post(`${process.env.REACT_APP_API_URL}/upload`, uploadData, {withCredentials:true})
             .then(response => {
                 this.setState({ imageUrl: response.data.secure_url });
             })
