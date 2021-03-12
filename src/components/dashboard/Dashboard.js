@@ -78,24 +78,29 @@ class Dashboard extends Component {
                     <button onClick={this.getRandomActivity} className="random-btn">Get Random Activity</button>
                 </section>
 
-                <section> <h3>Last experiences</h3>
-                    <div className="experience-box">
-                        {this.state.displayedExperience ? <div>
-                            <img src={this.state.displayedExperience.imageUrl} />
-                            <div className="experience-box-text">
-                                <p>{this.state.displayedExperience.description}</p>
-                                <Link to={`/activities/${this.state.displayedExperience.activity}`}>Details</Link>
+                <section className="dashboard-experiences">
+                    <div>
+                        <h3>Last experiences</h3>
+                        <div className="experience-box last-experiences">
+                            {this.state.displayedExperience ? <div className="last-experiences-content">
+                                {this.state.displayedExperience.imageUrl ? <img src={this.state.displayedExperience.imageUrl} /> : <img src='/header-img.png'/> }
+                                <div className="experience-box-text">
+                                    <Link to={`/activities/${this.state.displayedExperience.activity}`} className="text-link"><p className="last-experiences-description">{this.state.displayedExperience.description}</p></Link>
+                                </div>
+                            </div>
+                                : ""
+                            }
+                            <div >
+                                <button onClick={this.getPrevExperience} className="navigation-btn" >Previous</button><button onClick={this.getNextExperience} className="navigation-btn">Next</button>
                             </div>
                         </div>
-                            : ""
-                        }
-                        <div>
-                            <button onClick={this.getPrevExperience}>Previous</button><button onClick={this.getNextExperience}>Next</button>
+                    </div>
+                    <div>
+                        <h3>Total experiences</h3>
+                        <div className="experience-box total-experiences">
+                            {this.state.listOfExperiences.length}
                         </div>
                     </div>
-                    <h2>Total experiences</h2>
-                    {this.state.listOfExperiences.length}
-
                 </section>
             </div>
         )

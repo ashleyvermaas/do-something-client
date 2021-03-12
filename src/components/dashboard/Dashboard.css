@@ -38,3 +38,56 @@
 .random-btn:hover {
     background-color: rgba(255, 255, 255, 0.822);
 }
+
+.dashboard-experiences {
+   display: flex;
+   width: 100%;
+}
+
+.dashboard-experiences > div {
+    margin-right: 90px;
+}
+
+.total-experiences {
+    width: 100%;
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.last-experiences {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.last-experiences-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.navigation-btn {
+    background-color: #7161EF;
+    border: none;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 8px;
+    color: white;
+}
+
+.navigation-btn:hover {
+    background-color: #7261efd5;
+}
+
+.last-experiences-description {
+    font-size: 20px;
+}
+
+.last-experiences-description:hover {
+   font-weight: bold;
+   border-bottom: 2px solid #7261efd5;
+   color: #7261efd5
+}
