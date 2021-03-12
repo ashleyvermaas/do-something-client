@@ -1,0 +1,37 @@
+.experience-box {
+    border: 2px solid #7161EF;
+    border-radius: 30px;
+    display: flex;
+    padding: 25px;
+}
+
+
+.experience-box img {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 2%;
+}
+
+.experience-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around
+}
+
+.experience-box-text {
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.experience-box-text h5 {
+    margin: 0px;
+}
+
+.experience-box-text p {
+    margin-top: 5px;
+}
