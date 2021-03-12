@@ -11,7 +11,7 @@ function Homepage(props) {
                 <header className="header">
                     <div className="header-text">
                         <h1>doSomething</h1>
-                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi corrupti magnam quidem cumque error, iste fugit in accusamus voluptatum perferendis atque maxime modi suscipit quam cum sapiente officia illum quibusdam!</h4>
+                        <h3>The easiest way to find positive activities to relieve boredom, be inspired and have tons of fun.</h3>
                         <Link to='/signup' className='text-link'><p className="header-signup-btn">Get started</p></Link>
                     </div>
                     <img src="/header-img.png" alt="woman on skateboard" className="header-img" />
