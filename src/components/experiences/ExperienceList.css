@@ -1,5 +1,5 @@
 .experience-box {
-    border: 2px solid #7161EF;
+    border: 3px solid #7161EF;
     border-radius: 30px;
     display: flex;
     padding: 25px;
@@ -26,6 +26,10 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+}
+
+.experience-box-text button {
+    margin: 0px;
 }
 
 .experience-box-text h5 {

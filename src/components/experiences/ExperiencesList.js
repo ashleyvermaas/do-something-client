@@ -38,7 +38,7 @@ class ExperiencesList extends Component {
                                     <h5>Description:</h5> <p>{experience.description}</p>
                                     <h5>Rating:</h5> <p>{experience.rating}</p>
                                     <EditExperience experience={experience} getActivityDetails={this.props.getActivityDetails} selectExperience={() => this.selectExperience(experienceId)} />
-                                    <button onClick={() => this.deleteExperience(experienceId)} className="delete-btn">Delete experience</button>
+                                    <button onClick={() => this.deleteExperience(experienceId)} className="delete-btn">Delete</button>
                                     </div>
                                 </div>
                             }
