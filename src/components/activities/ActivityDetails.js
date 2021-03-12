@@ -65,6 +65,7 @@ class ActivityDetails extends Component {
                         
 
                     </div>
+                    <h3>Experiences</h3>
                     <ExperiencesList experiences={this.state.experiences} activityId={this.state._id} getActivityDetails={this.getActivityDetails} />
                 </div>
             </div>
